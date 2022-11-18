@@ -1,2 +1,2 @@
-# Curriculum---Joao-Victor-Mendes
+# curriculum---joao-victor-mendes
  
