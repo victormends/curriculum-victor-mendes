@@ -150,7 +150,7 @@
 		%------------------------------------------------
 		
 		\ifthenelse{\equal{\aboutme}{}}{}{
-			\profilesection{Sobre mim}
+			\profilesection{About Me}
 			\begin{flushleft}
 				\aboutme
 			\end{flushleft}
