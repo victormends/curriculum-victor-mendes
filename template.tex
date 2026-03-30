@@ -31,7 +31,7 @@
 
 %--- PROFESSIONAL SUMMARY (THE ELITE HOOK & BRIDGE) ---
 \section{Professional Summary}
-\textbf{Silver medalist, Brazilian Mathematics Olympiad (OBMEP, Top 0.01\% of 18M+ participants nationally).} Translates extreme analytical rigor to structural incident response in high-stakes production environments. Specialized L2/L3 Engineering Support specialist closing 80+ tickets weekly at 95\%+ SLA compliance. Expert in PostgreSQL diagnostics and structural failure-class elimination, safeguarding systems where 30 mins downtime risks \textasciitilde\$15k USD in combined client exposure.
+\textbf{Silver medalist, Brazilian Mathematics Olympiad (OBMEP, Top 0.01\% of 18M+ participants nationally).} Translates extreme analytical rigor to structural incident response in high-stakes production environments. L2/L3 Engineering Support specialist closing 80+ tickets weekly at 95\%+ SLA compliance. Expert in PostgreSQL diagnostics and structural failure-class elimination, safeguarding systems where 30 mins downtime risks \textasciitilde\$15k USD in combined client exposure.
 
 %--- TECHNICAL SKILLS (REFINED VERTICALS) ---
 \section{Technical Skills}
@@ -48,14 +48,14 @@
 \textbf{Pedroso Automação} | B2B fiscal compliance ERP SaaS \hfill June 2024 -- Present \\
 \textit{Technical Support Engineer | L2/L3 Infrastructure Recovery} \hfill União da Vitória, PR
 
-Provides direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Operates with full independence on solo rotations, resolving P1/P2 incidents without escalation through deep structural analysis.
+Direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Operates with full independence on solo rotations, resolving P1/P2 incidents without escalation through deep structural analysis.
 \begin{itemize}[topsep=4pt]
     \item \textbf{Eliminated 100\% of WAL-related data losses} by querying \texttt{pg\_replication\_slots} to identify orphaned entries holding WAL segments for decommissioned subscribers; enforced \texttt{max\_slot\_wal\_keep\_size} as a fleet-wide guardrail.
     \item \textbf{Automated 30-database cluster recovery} by developing a PowerShell script parallelizing state checks, clearing stale \texttt{postmaster.pid} files, and monitoring WAL recovery on boot; reduced recovery time from hours to <5 minutes.
     \item \textbf{Diagnosed 1GB/month disk bloat} through \texttt{pg\_class} and \texttt{pg\_toast}; traced root cause to encrypted file paths serialized as thousands of characters per audit log entry; reduced restore time 60\% (17 min to 6:58) via \texttt{pg\_restore -j 4}.
-    \item \textbf{Engineered a 70M-record ETL pipeline} (PL/pgSQL + PowerShell) to process 15GB+ govt dataset; optimized via unlogged tables and dynamic SQL to cut processing time 60\%, surfacing commercial leads informs Q3 strategy.
+    \item \textbf{Engineered 70M-record ETL pipeline} (PL/pgSQL + PowerShell) to process 15GB+ govt dataset; optimized unlogged tables and dynamic SQL to cut processing time 60\%, surfacing the top 0.001\% of active commercial leads.
     \item \textbf{Resolved silent TLS 1.0 downgrade failures} on Windows 11 by tracing system behavior via Process Monitor; identified a registry key forced by legacy logic/Group Policy, enabling a permanent code fix within the same week.
-    \item \textbf{Delivered zero-data-loss migration of 20-year history} and 500k BRL in active stock by reverse-engineering a legacy Firebird database and replaying transaction changelogs to recalculate state from first principles.
+    \item \textbf{Delivered zero-data-loss migration of 20-year history} (500k BRL stock) by reverse-engineering legacy Firebird DB and replaying transaction changelogs to recalculate state from first principles.
     \item \textbf{Reduced fiscal diagnosis from 30+ min to <5 min} using LLM-assisted SEFAZ XML parsing to trace context-specific NCM, CFOP, and ICMS rejection rules across NFE/CTE/NFS patterns.
     \item \textbf{Established a shared technical knowledge base} and mentoring culture; produced 20+ video guides and ITIL docs, reducing internal dependency on senior availability and accelerating new engineer onboarding.
 \end{itemize}
@@ -68,7 +68,7 @@ Managed Cloud infrastructure and web operations for 70+ corporate clients (AWS R
 \begin{itemize}[topsep=4pt]
     \item \textbf{Served as Vendor Liaison for English-speaking domains} (GoDaddy, AWS, Namecheap), coordinating complex ownership transfers and infrastructure migrations for international clients.
     \item \textbf{Investigated client security breaches} by auditing Git history and access logs; revoked compromised sessions and reset credentials to resolve high-priority security incidents.
-    \item \textbf{Managed DNS infrastructure} through Route 53 and WAF; isolated failure domains during staged deployments.
+    \item \textbf{Resolved high-priority infrastructure incidents} across AWS Route 53, WAF, and email; isolated failure domains during CloudFront cache stalls and DNS propagation conflicts.
 \end{itemize}
 
 %--- EDUCATION & AWARDS ---
