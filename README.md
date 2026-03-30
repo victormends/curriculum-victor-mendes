@@ -8,9 +8,9 @@ This repository contains the LaTeX source and version-controlled history of my p
 - **Automation:** Systems-level PowerShell and SQL pipelines for infrastructure recovery and massive dataset ingestion.
 
 ## 🛠️ Tooling
-- **Template:** Twenty Seconds Resume/CV (Customized)
-- **Engine:** pdfLaTeX
-- **Color Profile:** FGV Blue (Professional Identity)
+- **Architecture:** Clean, one-page, two-column layout optimized for ATS and technical readability.
+- **Color Profile:** Professional Navy Blue (Brand Identity).
+- **Tooling:** Twenty Seconds Resume/CV (Customized), pdfLaTeX.
 
 ---
-*Note: This résumé is version-controlled to ensure 100% alignment between technical contributions and professional metrics.*
+*Note: This résumé is version-controlled to ensure 100% alignment between technical contributions and professional metrics. The profile picture has been removed to prioritize technical credentials.*
