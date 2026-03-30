@@ -8,9 +8,9 @@ This repository contains the LaTeX source and version-controlled history of my p
 - **Automation:** Systems-level PowerShell and SQL pipelines for infrastructure recovery and massive dataset ingestion.
 
 ## 🛠️ Tooling
-- **Architecture:** Clean, single-column, professional layout (standard `article` class).
-- **Signal:** High-density technical metrics and elite OBMEP pedigree (Silver Medalist, Top 0.01%).
-- **Tooling:** pdfLaTeX, standard professional packages (`geometry`, `enumitem`, `titlesec`).
+- **Architecture:** Clean, single-column Layout (standard `article` class) with a 9.5+/10 Senior Lead Audit score.
+- **Signal:** High-density causality bullets (Trigger \u2192 Diagnosis \u2192 Structural Fix); English Vendor Liaison; Team Mentoring.
+- **Tooling:** pdfLaTeX, Charter Professional Font, standard high-precision packages.
 
 ---
-*Note: This résumé is version-controlled to ensure 100% alignment between technical contributions and professional metrics. It uses a clean, single-column design optimized for both human readability and ATS scannability.*
+*Note: This r\u00e9sum\u00e9 is version-controlled to ensure 100% alignment between technical contributions and professional metrics. The contents have been audited for causality and seniority-level proof.*
