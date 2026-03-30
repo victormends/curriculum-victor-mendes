@@ -8,9 +8,9 @@ This repository contains the LaTeX source and version-controlled history of my p
 - **Automation:** Systems-level PowerShell and SQL pipelines for infrastructure recovery and massive dataset ingestion.
 
 ## 🛠️ Tooling
-- **Architecture:** Clean, one-page, two-column layout optimized for ATS and technical readability.
-- **Color Profile:** Professional Navy Blue (Brand Identity).
-- **Tooling:** Twenty Seconds Resume/CV (Customized), pdfLaTeX.
+- **Architecture:** Clean, single-column, professional layout (standard `article` class).
+- **Signal:** High-density technical metrics and elite OBMEP pedigree (Silver Medalist, Top 0.01%).
+- **Tooling:** pdfLaTeX, standard professional packages (`geometry`, `enumitem`, `titlesec`).
 
 ---
-*Note: This résumé is version-controlled to ensure 100% alignment between technical contributions and professional metrics. The profile picture has been removed to prioritize technical credentials.*
+*Note: This résumé is version-controlled to ensure 100% alignment between technical contributions and professional metrics. It uses a clean, single-column design optimized for both human readability and ATS scannability.*
