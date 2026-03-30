@@ -3,7 +3,7 @@
 This repository contains the LaTeX source and version-controlled history of my professional résumé, centered on **L2/L3 Technical Support Engineering, PostgreSQL Infrastructure, and ETL Automation.**
 
 ## 🎯 Profile Focus
-- **PostgreSQL Specialist:** Deep-dive diagnostics involving WAL management, replication slots, and system catalog forensics.
+- **PostgreSQL Specialist:** Deep-dive diagnostics involving WAL management, replication slots, and system catalog internals.
 - **Support Operations:** High-throughput incident response (80+ tickets/week) with a focus on de-escalation and structural RCA.
 - **Automation:** Systems-level PowerShell and SQL pipelines for infrastructure recovery and massive dataset ingestion.
 
