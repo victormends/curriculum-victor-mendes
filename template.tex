@@ -29,17 +29,17 @@
     União da Vitória, PR, Brazil (UTC-3)
 \end{center}
 
-%--- PROFESSIONAL SUMMARY (THE ELITE HOOK) ---
+%--- PROFESSIONAL SUMMARY (THE ELITE HOOK & BRIDGE) ---
 \section{Professional Summary}
-\textbf{Silver medalist, Brazilian Mathematics Olympiad (OBMEP), top 0.01\% of 18M+ participants nationally.} Three years in enterprise technical support closing 80+ tickets weekly at 95\%+ SLA compliance across fiscal compliance environments. Specialist in PostgreSQL incident response and structural failure-class elimination, safeguarding systems where 30 mins downtime risks \textasciitilde\$15k USD in combined client exposure.
+\textbf{Silver medalist, Brazilian Mathematics Olympiad (OBMEP, Top 0.01\% of 18M+ participants nationally).} Translates extreme analytical rigor to structural incident response in high-stakes production environments. Specialized L2/L3 Engineering Support specialist closing 80+ tickets weekly at 95\%+ SLA compliance. Expert in PostgreSQL diagnostics and structural failure-class elimination, safeguarding systems where 30 mins downtime risks \textasciitilde\$15k USD in combined client exposure.
 
-%--- TECHNICAL SKILLS (GRANULAR VERTICALS) ---
+%--- TECHNICAL SKILLS (REFINED VERTICALS) ---
 \section{Technical Skills}
 \begin{itemize}
-    \item \textbf{PostgreSQL Diagnostics \& Incident Response:} WAL management, replication slots, system catalog analysis (pg\_class, pg\_attribute, pg\_toast), bloat analysis, EXPLAIN ANALYZE tuning, JIT, pg\_hba (SCRAM/MD5), pg\_restore -j 4, PL/pgSQL.
-    \item \textbf{Infrastructure Automation:} PowerShell (Primary), Python (Pandas/parsing), Bash, SQL, ETL pipeline design, Windows Server Registry/ACL logic, DNS/SMTP/TLS protocol diagnostics.
-    \item \textbf{Support Operations:} P1/P2 Incident Management, ITIL Root Cause Analysis (RCA), SLA \& Churn management, B2B SaaS cross-domain live debugging, technical mentoring.
-    \item \textbf{Languages:} English (Certified B2 Full Professional Proficiency), Portuguese (Native).
+    \item \textbf{PostgreSQL Diagnostics \& Incident Response:} WAL management, replication slots, system catalog internals (pg\_class, pg\_toast), bloat forensics, EXPLAIN ANALYZE tuning, JIT, pg\_hba (SCRAM/MD5), pg\_restore -j 4, PL/pgSQL.
+    \item \textbf{Infrastructure Automation:} PowerShell, Python (Pandas/parsing), Bash, SQL, ETL pipeline design, Windows Server Registry/ACL logic, DNS/SMTP/TLS protocol diagnostics, Git.
+    \item \textbf{Support Operations:} P1/P2 Incident management, ITIL-aligned RCA, post-mortem documentation, SLA \& Churn management, B2B SaaS cross-domain live debugging, technical mentoring.
+    \item \textbf{Languages:} English (Certified B2 Full Professional Proficiency, BRASAS), Portuguese (Native).
 \end{itemize}
 
 %--- PROFESSIONAL EXPERIENCE ---
@@ -48,35 +48,36 @@
 \textbf{Pedroso Automação} | B2B fiscal compliance ERP SaaS \hfill June 2024 -- Present \\
 \textit{Technical Support Engineer | L2/L3 Infrastructure Recovery} \hfill União da Vitória, PR
 
-Direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Managed solo on-call rotations for P1/P2 incidents.
+Provides direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Operates with full independence on solo rotations, resolving P1/P2 incidents without escalation through deep structural analysis.
 \begin{itemize}[topsep=4pt]
-    \item \textbf{Eliminated 100\% of WAL data losses} by querying \texttt{pg\_replication\_slots}, identifying an orphaned slot holding segments for a decommissioned subscriber; enforced \texttt{max\_slot\_wal\_keep\_size} fleet-wide.
-    \item \textbf{Automated 30-database cluster recovery} with a PowerShell script parallelizing state checks and clearing stale \texttt{postmaster.pid} files on boot; reduced recovery time from hours to <5 minutes.
-    \item \textbf{Diagnosed 1GB/month disk bloat} via \texttt{pg\_class} and \texttt{pg\_toast} to encrypted file paths serialized as massive audit log entries; reduced restore time 60\% (17 min to 6:58) via \texttt{pg\_restore -j 4}.
-    \item \textbf{Engineered a 70M-record ETL pipeline} (PL/pgSQL + PowerShell) in one day against 15GB+ govt dataset; unlogged tables and dynamic SQL cut processing time 60\%, surfacing the top 0.001\% of commercial leads.
-    \item \textbf{Traced silent TLS 1.0 downgrade failures} on Windows 11 via Process Monitor; identified a registry key forced by legacy application logic, enabling a permanent code fix within the same week.
-    \item \textbf{Reverse-engineered Firebird legacy database} to migrate 20 years of inventory history and 500k BRL in active stock with zero data loss using raw SQL reconstruction.
-    \item \textbf{Compressed fiscal diagnosis from 30+ min to <5 min} using LLM-assisted SEFAZ XML parsing to trace context-specific NCM, CFOP, and ICMS rejection rules across NFE/CTE/NFS patterns.
-    \item \textbf{Restored database access fleet-wide} after SCRAM vs MD5 mismatch incidents without OS reformats by applying scoped MD5 permissions via \texttt{pg\_hba} rules.
+    \item \textbf{Eliminated 100\% of WAL-related data losses} by querying \texttt{pg\_replication\_slots} to identify orphaned entries holding WAL segments for decommissioned subscribers; enforced \texttt{max\_slot\_wal\_keep\_size} as a fleet-wide guardrail.
+    \item \textbf{Automated 30-database cluster recovery} by developing a PowerShell script parallelizing state checks, clearing stale \texttt{postmaster.pid} files, and monitoring WAL recovery on boot; reduced recovery time from hours to <5 minutes.
+    \item \textbf{Diagnosed 1GB/month disk bloat} through \texttt{pg\_class} and \texttt{pg\_toast}; traced root cause to encrypted file paths serialized as thousands of characters per audit log entry; reduced restore time 60\% (17 min to 6:58) via \texttt{pg\_restore -j 4}.
+    \item \textbf{Engineered a 70M-record ETL pipeline} (PL/pgSQL + PowerShell) to process 15GB+ govt dataset; optimized via unlogged tables and dynamic SQL to cut processing time 60\%, surfacing commercial leads informs Q3 strategy.
+    \item \textbf{Resolved silent TLS 1.0 downgrade failures} on Windows 11 by tracing system behavior via Process Monitor; identified a registry key forced by legacy logic/Group Policy, enabling a permanent code fix within the same week.
+    \item \textbf{Delivered zero-data-loss migration of 20-year history} and 500k BRL in active stock by reverse-engineering a legacy Firebird database and replaying transaction changelogs to recalculate state from first principles.
+    \item \textbf{Reduced fiscal diagnosis from 30+ min to <5 min} using LLM-assisted SEFAZ XML parsing to trace context-specific NCM, CFOP, and ICMS rejection rules across NFE/CTE/NFS patterns.
+    \item \textbf{Established a shared technical knowledge base} and mentoring culture; produced 20+ video guides and ITIL docs, reducing internal dependency on senior availability and accelerating new engineer onboarding.
 \end{itemize}
 
 \vspace{8pt}
 \textbf{Girafa Comunicação Interativa} | Digital Agency \hfill Sep 2022 -- Apr 2024 \\
 \textit{Cloud Infrastructure Analyst \& Web Operations} \hfill Remote, Brazil
 
-Managed DNS and Cloud infrastructure for 70+ clients (AWS Route 53, Registro.br, Locaweb).
+Managed Cloud infrastructure and web operations for 70+ corporate clients (AWS Route 53, Registro.br, Locaweb).
 \begin{itemize}[topsep=4pt]
-    \item \textbf{Investigated client security breaches} by auditing Git history and access logs; revoked compromised sessions and reset credentials.
-    \item \textbf{Resolved high-priority DNS incidents} by isolating failure domains during ownership transfers and migrations.
+    \item \textbf{Served as Vendor Liaison for English-speaking domains} (GoDaddy, AWS, Namecheap), coordinating complex ownership transfers and infrastructure migrations for international clients.
+    \item \textbf{Investigated client security breaches} by auditing Git history and access logs; revoked compromised sessions and reset credentials to resolve high-priority security incidents.
+    \item \textbf{Managed DNS infrastructure} through Route 53 and WAF; isolated failure domains during staged deployments.
 \end{itemize}
 
 %--- EDUCATION & AWARDS ---
 \section{Education \& Pedigree}
 \textbf{FGV --- Data Science \& Economics (2020--2022)} \hfill Rio de Janeiro, Brazil \\
-Full-ride OBMEP scholarship; Exploratory Data Analysis 9.71; Programming Languages 8.60.
+Full-ride OBMEP scholarship; EDA: 9.71. (Left to pursue hands-on production engineering role).
 
 \textbf{IFPR --- Systems Analysis \& Development (2023--2024)} \hfill União da Vitória, Brazil \\
-Grade A in Mathematics for Computing.
+Grade A in Mathematics for Computing. (Left for full-time L2/L3 Engineering position).
 
 \vspace{4pt}
 \textbf{Silver Medalist --- Brazilian Mathematics Olympiad (OBMEP, 2016)} \hfill National \\
