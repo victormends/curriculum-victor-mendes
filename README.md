@@ -1,5 +1,11 @@
 # Professional Résumé | João Victor Mendes
 
+<p align="left">
+  <a href="https://github.com/victormends/curriculum-victor-mendes/blob/main/Joao_Victor_Mendes_Resume.pdf">
+    <img src="https://img.shields.io/badge/VIEW%20R%C3%89SUM%C3%89%20%E2%80%94%20PDF-132046?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="View PDF"/>
+  </a>
+</p>
+
 This repository contains the LaTeX source and version-controlled history of my professional résumé, centered on **L2/L3 Technical Support Engineering, PostgreSQL Infrastructure, and ETL Automation.**
 
 ## 🎯 Profile Focus
