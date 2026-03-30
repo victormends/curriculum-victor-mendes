@@ -28,8 +28,7 @@
 
 \definecolor{white}{RGB}{255,255,255}
 \definecolor{gray}{HTML}{4D4D4D}
-\definecolor{sidecolor}{RGB}{26, 44, 97}
-\definecolor{mainblue}{RGB}{26, 44, 97}
+\definecolor{sidecolor}{RGB}{19, 32, 70}
 \definecolor{mainblue}{RGB}{19, 32, 70}
 \definecolor{maingray}{HTML}{B9B9B9}
 

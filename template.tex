@@ -2,76 +2,48 @@
 % Professional Resume/CV based on the Twenty Seconds Resume/CV template
 % Source: https://github.com/victormends/curriculum-victor-mendes
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Twenty Seconds Resume/CV
-% LaTeX Template
-% Version 1.1 (8/1/17)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% The MIT License (see included LICENSE file)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
-\usepackage{blindtext}
 \usepackage{hyperref}
 \usepackage{url} 
-%---------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
 
-% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
-
-\profilepic{perfil.jpg} % Profile picture
+\profilepic{} % Removed as per modern professional shift
 
 \cvname{João Victor Mendes} % Your name
-\cvjobtitle{\normalsize{L2/L3 Technical Support Engineer \\ PostgreSQL · Incident Response · ETL}} % Job title/career
+\cvjobtitle{\normalsize{L2/L3 Technical Support Engineer \\ PostgreSQL · Incident Response · ETL}} % Job title
 
-\cvdate{(UTC-3)} % Role or timezone indicator
+\cvdate{(UTC-3)} % Timezone
 \cvaddress{União da Vitória, PR, Brazil} % Location
-\cvnumberphone{+55 (41) 99593-8387} % Phone number
-\cvsite{\href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor}}
-\cvmail{j.victor8@hotmail.com} % Email address
+\cvnumberphone{+55 (41) 99593-8387} % Phone
+\cvsite{\href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor}} % LinkedIn
+\cvmail{j.victor8@hotmail.com} % Email
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	 ABOUT ME
+%	 ABOUT ME (SIDEBAR)
 %----------------------------------------------------------------------------------------
 
-\aboutme{18M+ participant national silver medallist at OBMEP (top 0.01\%). I treat production behavior as the real specification: isolate variables, find root causes, and fix structurally so the failure class cannot recur. Comfortable managing incidents without a playbook.}% To have no About Me section, just remove all the text and leave \aboutme{}
+\aboutme{18M+ participant national silver medallist at OBMEP (top 0.01\%). I treat production behavior as the real specification: isolate variables, find root causes, and fix structurally so the failure class cannot recur. Comfortable managing incidents without a playbook.}
 
 %----------------------------------------------------------------------------------------
-%	 SKILLS
+%	 SKILLS (SIDEBAR)
 %----------------------------------------------------------------------------------------
 
 % Skill bar section, each skill must have a value between 0 an 6 (float)
-
-\skills{{PostgreSQL/6.0},{PowerShell/5.5},{Incident Response/5.0},{ETL Design/5.0},{AWS/4.5}}
+\skills{{AWS/4.0},{ETL Design/5.5},{Incident Response/5.5},{PowerShell/5.5},{PostgreSQL/6.0}}
 \skillstext{{English/Certified B2},{Portuguese/Native}}
-
-
-%----------------------------------------------------------------------------------------
 
 \makeprofile % Print the sidebar
 
 %----------------------------------------------------------------------------------------
-%	 INTERESTS
+%	 SUMMARY
 %----------------------------------------------------------------------------------------
-
 
 \section{Summary}
 Three years in enterprise support closing 80+ tickets weekly at 95\%+ SLA compliance across fiscal compliance environments. Resolution of P1/P2 incidents end-to-end without escalation, safeguarding systems where 30 mins downtime risks \textasciitilde\$15k USD in combined client exposure.
@@ -82,11 +54,10 @@ Three years in enterprise support closing 80+ tickets weekly at 95\%+ SLA compli
 
 \section{Education}
 
-\begin{twenty} % Environment for a list with descriptions
+\begin{twenty}
 	\twentyitem{2020-2022}{Bachelors Coursework in Data Science \& Economics}{Rio de Janeiro}{FGV, Brazil. Full-ride scholarship via OBMEP; Exploratory Data Analysis 9.71; Programming Languages 8.60.}
 	\twentyitem{2023-2024}{Systems Analysis \& Development}{União da Vitória}{IFPR, Brazil. Grade A in Mathematics for Computing.}
 \end{twenty}
-
 
 %----------------------------------------------------------------------------------------
 %	 AWARDS
@@ -94,7 +65,7 @@ Three years in enterprise support closing 80+ tickets weekly at 95\%+ SLA compli
 
 \section{Awards}
 
-\begin{twentyshort} % Environment for a short list with no descriptions
+\begin{twentyshort}
     \twentyitemshort{2016}{Silver Medal - OBMEP. Top 0.01\% of 18M+ participants nationally.}
 	\twentyitemshort{2014}{Bronze Medal - OBMEP. Top 0.01\% of 18M+ participants nationally.}
 	\twentyitemshort{2013, 2015}{Honorable Mention - OBMEP.}
@@ -106,54 +77,37 @@ Three years in enterprise support closing 80+ tickets weekly at 95\%+ SLA compli
 
 \section{Experience}
 
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem{Jun 2024 - Present}{L2/L3 Technical Support Engineer}{Pedroso Automação}{Direct support for 500+ corporate clients (1,500+ end-users). Managed 80+ weekly ticket closures with 95\%+ SLA compliance. Resolving P1/P2 incidents end-to-end without escalation.
+\begin{twenty}
+	\twentyitem{Jun 2024 - Present}{L2/L3 Technical Support Engineer}{Pedroso Automação}{Direct support for 500+ corporate environments. Managed 80+ weekly ticket closures with 95\%+ SLA compliance. Resolving P1/P2 incidents end-to-end without escalation.
 	\begin{itemize}
-		\item \textbf{Eliminated 100\% of WAL-related client data losses} by querying pg\_replication\_slots and identifying orphaned slots; enforced max\_slot\_wal\_keep\_size fleet-wide.
+		\item \textbf{Eliminated 100\% of WAL data losses} by querying pg\_replication\_slots to identify orphaned slots; enforced max\_slot\_wal\_keep\_size as a fleet-wide guardrail.
 		\item \textbf{Automated 30-database cluster recovery} (PowerShell); cut recovery time under 5 min daily through parallel state checks and WAL recovery on boot.
 		\item \textbf{Diagnosed 1GB/month disk bloat} via pg\_class and pg\_toast; reduced restore time from 17 to 6:58 via pg\_restore -j 4; structural fix cut size over 90\%.
 		\item \textbf{Built 70M-record ETL pipeline} (PL/pgSQL + PowerShell) to process 15GB+ government dataset; cutting processing time by 60\%.
-		\item \textbf{Traced silent fiscal invoice failures} on Windows 11 to a registry key forcing TLS 1.0 downgrade; enabling a permanent dev fix same week.
-		\item \textbf{Reverse-engineered Firebird legacy database} to migrate 20 years of history and 500k BRL in active stock with zero data loss.
-		\item \textbf{Compressed fiscal invoice diagnosis} 30+ min to <5 min using LLM-assisted SEFAZ XML parsing to trace NCM/CFOP/ICMS rules.
-		\item \textbf{Restored database access} across legacy machines after SCRAM vs MD5 mismatch without OS reformats by applying scoped MD5 permissions.
-		\item \textbf{Built technical knowledge base} of 20+ video walkthroughs and 10+ documents, eliminating dependency on senior availability.
+		\item \textbf{Traced silent TLS 1.0 downgrade failures} on Windows 11 to a registry key forcing a legacy override; enabling a permanent code fix within the same week.
+		\item \textbf{Reverse-engineered Firebird legacy database} with no documentation to migrate 20 years of history and 500k BRL in active stock with zero data loss.
+		\item \textbf{Compressed fiscal invoice diagnosis} 30+ min to <5 min using LLM-assisted SEFAZ XML parsing to trace NCM/CFOP/ICMS rules across NFE/CTE/NFS patterns.
+		\item \textbf{Restored database access} fleet-wide after SCRAM vs MD5 mismatch without OS reformats by applying scoped MD5 permissions via pg\_hba rules.
 	\end{itemize}}
 	\twentyitem{Sep 2022 - Apr 2024}{Cloud Infrastructure \& Web Operations}{Girafa Comunicação Interativa}{Managed Cloud infrastructure and web operations for 70+ corporate clients.
 	\begin{itemize}
 		\item \textbf{Investigated client security breaches} by auditing Git commit history and access logs; revoked compromised sessions and reset credentials.
-		\item \textbf{Resolved high-priority incidents} across AWS, DNS, and email infrastructure by isolating failure domains between CloudFront and DNS propagation.
-		\item \textbf{Coordinated staged deployments on AWS} across multi-developer environments, enforcing freeze protocols and pre-production validation.
+		\item \textbf{Resolved high-priority incidents} across AWS, DNS, and email infrastructure by isolating failure domains during ownership transfers and migrations.
 		\item \textbf{Managed DNS infrastructure} through Route 53, Registro.br, Locaweb, and full DNS record configurations.
 	\end{itemize}}
 \end{twenty}
 
 %----------------------------------------------------------------------------------------
-%	 OTHER INFORMATION
-%---------------------------------------------------------------------------------------
-
-\section{Technical Skills}
-\textbf{PostgreSQL}: WAL, replication slots, system catalog (pg\_class, pg\_attribute, pg\_toast), bloat analysis, EXPLAIN ANALYZE, JIT, unlogged tables, autovacuum, pg\_hba, SCRAM/MD5, backup/restore.\\
-\textbf{Automation}: PowerShell (Primary), Bash, Shell, Python (Pandas), SQL, PL/pgSQL, ETL Design.\\
-\textbf{Infrastructure}: Incident Response (ITIL RCA), AWS (EC2, RDS, S3, CloudFront, Route 53), Windows Server, DNS, SMTP, TCP/IP, SSL/TLS, Windows Firewall.
-
-\section{Languages}
-English (B2 Full Professional Proficiency, BRASAS) · Portuguese (Native).
-
-
-
-%----------------------------------------------------------------------------------------
-%	 SECOND PAGE EXAMPLE
+%	 TECHNICAL SKILLS & LANGUAGES
 %----------------------------------------------------------------------------------------
 
+\section{Support Ops & Technical Toolkit}
+\textbf{PostgreSQL}: WAL forensics, replication slots, system catalog internals (pg\_class, pg\_toast), bloat analysis, EXPLAIN ANALYZE tuning, autovacuum, pg\_hba (SCRAM/MD5).\\
+\textbf{Automation}: PowerShell (Infrastructure-as-Code), Python (Pandas/parsing), PL/pgSQL, ETL Design.\\
+\textbf{Incident Response}: ITIL Root Cause Analysis (RCA), AWS (EC2, RDS, Route 53), Windows Server Registry/ACLs, DNS propagation, SMTP/TLS protocol diagnostics.
 
-\section{Certifications}
-BRASAS English Proficiency Certificate (B2).
+\section{Languages & Certifications}
+English (B2 Full Professional Proficiency, BRASAS) · Portuguese (Native). \\
+\textbf{Certification}: BRASAS English Proficiency Certificate (B2).
 
-
-
-
-
-%----------------------------------------------------------------------------------------
-
-\end{document} 
+\end{document}
