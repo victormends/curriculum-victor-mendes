@@ -51,14 +51,14 @@
 
 Suporte L2/L3 direto para 500+ ambientes corporativos (1.500+ usuários finais). Manteve independência total em rotações solo, resolvendo incidentes P1/P2 sem escalada por meio de análise estrutural profunda.
 \begin{itemize}[topsep=4pt]
-    \item \textbf{Eliminou a classe de risco de retenção de WAL} na frota construindo um monitor PowerShell agendado via Agendador de Tarefas (PG12) que detecta slots de replicação órfãos inativos e aplica remoção automática por limiar (2GB retido / 30 min de inatividade), com alertas no Visualizador de Eventos; em instâncias PG13+, complementado com \texttt{max\_slot\_wal\_keep\_size} como limite rígido.
+    \item \textbf{Eliminou a classe de risco de retenção de WAL} na frota: construiu um monitor PowerShell agendado via Agendador de Tarefas (PG12) que detecta slots de replicação órfãos inativos e os remove quando a retenção ultrapassa 2GB ou a inatividade supera 30 minutos, com alertas no Visualizador de Eventos. Em instâncias PG13+, complementado com \texttt{max\_slot\_wal\_keep\_size} como limite rígido no servidor.
     \item \textbf{Automatizou a recuperação de cluster com 30 bancos de dados} desenvolvendo script PowerShell que paraleliza verificações de estado, limpa arquivos \texttt{postmaster.pid} obsoletos e monitora recuperação WAL na inicialização; reduziu o tempo de recuperação de horas para menos de 5 minutos.
     \item \textbf{Padronizou a implantação do PostgreSQL no Windows} com script de instalação ponta a ponta, configuração de serviço e hardening de runtime; reduziu o tempo de configuração manual de \textasciitilde{}2 horas para menos de 7 minutos nos ambientes da frota.
     \item \textbf{Diagnosticou bloat de disco de 1GB/mês} por meio de \texttt{pg\_class} e \texttt{pg\_toast}; rastreou a causa raiz a caminhos de arquivos criptografados serializados como milhares de caracteres por entrada de log de auditoria; reduziu o tempo de restore em 60\% (17 min para 6:58) via \texttt{pg\_restore -j 4}.
     \item \textbf{Construiu pipeline ETL de 70M de registros} com redução de 60\% no tempo de processamento sobre dataset governamental de 15GB+; estendido com classificação tributária de CNPJs (MEI, Simples Nacional, Normal, inválido), auditoria de regime fiscal via XML (NF-e/NFC-e/NFS-e/CT-e) e staging em PostgreSQL, expondo o top 0,001\% dos leads comerciais ativos.
     \item \textbf{Resolveu falhas silenciosas de downgrade TLS 1.0} no Windows 11 via rastreamento com Process Monitor; identificou chaves de registro forçadas pela aplicação que sobrescreviam os padrões do sistema e viabilizou correção permanente no código na mesma semana.
-    \item \textbf{Entregou migração sem perda de dados de 20 anos de histórico} (10.000+ itens, R\$500k em estoque) ao fazer engenharia reversa do banco Firebird legado e reprocessar changelogs de transações para recalcular o estado a partir dos primeiros princípios.
-    \item \textbf{Reduziu diagnóstico fiscal de 30+ min para menos de 5 min} usando parse de XML SEFAZ assistido por LLM para rastrear regras de rejeição específicas de contexto de NCM, CFOP e ICMS nos padrões NFE/CTE/NFS.
+    \item \textbf{Protegeu R\$500k em estoque ativo (\textasciitilde{}\$100k USD)} ao fazer engenharia reversa de um banco Firebird legado sem documentação; reprocessou 20 anos de changelogs de transações para reconstruir o estado completo do inventário --- sem perda de dados, entregue no mesmo dia em que o esquema foi visto pela primeira vez.
+    \item \textbf{Reduziu diagnóstico fiscal de 30+ min para menos de 5 min} desenvolvendo um fluxo estruturado de triagem assistido por LLM: baixar o XML de rejeição SEFAZ, injetar contexto de banco de dados e sistema, e extrair a regra específica de NCM, CFOP ou ICMS que causa cada rejeição --- eliminando toda uma classe de escaladas para desenvolvimento.
     \item \textbf{Estabeleceu runbooks e cultura de mentoria técnica}; produziu 20+ guias em vídeo e pós-mortems ITIL, reduzindo a dependência de disponibilidade sênior e acelerando o onboarding de novos engenheiros.
 \end{itemize}
 
@@ -76,10 +76,10 @@ Operou infraestrutura Cloud e operações web para 70+ clientes corporativos (AW
 % Formação e Prêmios
 \section{Formação \& Histórico}
 \textbf{FGV --- Ciência de Dados \& Economia (2020--2022)} \hfill Rio de Janeiro, Brasil \\
-Bolsista integral OBMEP; AED: 9,71.
+Bolsista integral OBMEP; AED: 9,71. Saiu após dois anos para retornar ao Sul --- a bolsa exigia residência integral a 1.000 km da família; optou pelo trabalho prático em vez de concluir a graduação no Rio.
 
 \textbf{IFPR --- Análise e Desenvolvimento de Sistemas (2023--2024)} \hfill União da Vitória, Brasil \\
-Conceito A em Matemática para Computação.
+Conceito A em Matemática para Computação. Saiu para se dedicar integralmente ao cargo de L2/L3; a atuação em incidentes reais acelerava o aprendizado mais do que o currículo noturno.
 
 \vspace{4pt}
 \textbf{Medalha de Prata --- Olimpíada Brasileira de Matemática (OBMEP, 2016)} \hfill Nacional \\
