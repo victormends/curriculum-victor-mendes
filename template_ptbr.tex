@@ -26,7 +26,7 @@
     \vspace{3pt}
     {\large Production Support Engineer (PSE) / SRE | Cloud · Observabilidade · Database Reliability} \\
     \vspace{2pt}
-    \href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor} | \href{https://github.com/victormends}{github.com/victormends} \small{(pg-incident-recovery · receita-cnpj-etl)} | \href{mailto:j.victor8@hotmail.com}{j.victor8@hotmail.com} | +55 (41) 99593-8387 \\
+    \href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor} | \href{https://github.com/victormends}{github.com/victormends} | \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com} | \href{mailto:j.victor8@hotmail.com}{j.victor8@hotmail.com} | +55 (41) 99593-8387 \\
     União da Vitória, PR, Brasil (UTC-3)
 \end{center}
 
@@ -84,6 +84,17 @@ Operou infraestrutura Cloud e operações web para 70+ clientes corporativos (AW
 \begin{itemize}[topsep=3pt]
     \item \textbf{Operação Cloud e Resolução de Incidentes:} Gerenciou DNS corporativo, WAF e zonas no AWS Route 53 e CloudFront para 70+ domínios; atuou como liaison internacional em 15+ migrações complexas de infraestrutura com registradores externos (GoDaddy, AWS, Namecheap) e isolou falhas de propagação/cache.
     \item \textbf{Investigação de Incidentes de Segurança:} Auditou históricos de Git e logs de acesso para identificar brechas de segurança; revogou sessões comprometidas e realizou rotação de credenciais em 10+ ambientes corporativos.
+\end{itemize}
+
+% Projetos de Engenharia em Produção
+\section{Projetos de Engenharia em Produção}
+
+\textbf{UV Flood Map (Omenix)} | Monitoramento hidrológico e simulação de áreas inundáveis, em produção \hfill Set 2026 -- Atual \\
+\textit{Autor e responsável pela operação} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
+\begin{itemize}[topsep=3pt]
+    \item Coleta multifonte (Copel, ANA, ONS) com payloads brutos imutáveis; API Python atrás de Nginx e geoprocessamento sobre DEM com cache e singleflight para proteção sob concorrência.
+    \item Releases imutáveis com rollback por symlink, serviço com hardening de systemd e limites de memória, endpoints de health e readiness, backups e testes com Playwright.
+    \item Previsão experimental privada com emissões imutáveis e avaliação prospectiva, sem efeito no produto público.
 \end{itemize}
 
 % Formação e Prêmios
