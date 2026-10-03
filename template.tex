@@ -31,16 +31,16 @@
 
 % Professional Summary
 \section{Professional Summary}
-Production Support Engineer (PSE) and SRE supporting critical distributed platforms (FinTech and AI). Hands-on expertise in relational database saturation diagnostics (AWS Aurora MySQL, PostgreSQL), structural telemetry noise diagnosis, and critical production incident response with a focus on detection validation to reduce MTTD and root-cause post-mortems.
+Production Support Engineer (PSE) and SRE supporting critical distributed platforms (FinTech, AI, and SaaS). Hands-on expertise in relational database internals and saturation diagnostics (AWS Aurora MySQL, PostgreSQL), production P1/P2 incident response, detection engineering focused on MTTD reduction, and root-cause post-mortems.
 
 % Technical Skills
 \section{Technical Skills}
 \begin{itemize}
-    \item \textbf{Cloud \& Infrastructure:} AWS (Aurora MySQL/RDS, EKS, CloudWatch, SSM), Kubernetes (Karpenter, ArgoCD, Topology Spread Constraints), Docker, Linux (systemd, boot/network troubleshooting).
-    \item \textbf{Observability \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), OpenTelemetry, Incident Response (P1/P2), Post-Mortem / RCA (ITIL), Detection Engineering \& Runbooks, SLIs/SLOs.
-    \item \textbf{Databases:} AWS Aurora MySQL (Performance Insights, connection pooling, parameter groups), PostgreSQL (WAL, replication slots, bloat, autovacuum, partial indexes, unlogged tables, \texttt{pg\_class}, \texttt{pg\_attribute}, \texttt{pg\_toast}, EXPLAIN ANALYZE).
-    \item \textbf{Security \& Access:} pg\_hba access hardening (SCRAM-SHA-256 vs.\ MD5, scoped IP ranges), RBAC, audit log analysis, secret management (SSM Parameter Store SecureString).
-    \item \textbf{IaC \& Automation:} Terraform, Terragrunt, Python, Bash, PowerShell, SQL, PL/pgSQL, Git.
+    \item \textbf{Cloud \& Infrastructure:} AWS (Aurora MySQL/RDS, EKS, CloudWatch, SSM), Kubernetes (Karpenter, ArgoCD, Topology Spread Constraints), Docker, Linux (systemd, boot/network troubleshooting), Nginx.
+    \item \textbf{Observability \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), OpenTelemetry, Incident Response (P1/P2), Post-Mortem / RCA (ITIL), Detection Engineering \& Runbooks.
+    \item \textbf{Databases:} AWS Aurora MySQL (Performance Insights, connection pooling, parameter groups), PostgreSQL (WAL, replication slots, bloat, unlogged tables, \texttt{pg\_class}, \texttt{pg\_attribute}, \texttt{pg\_toast} catalogs, EXPLAIN ANALYZE), Firebird.
+    \item \textbf{Security \& Access:} pg\_hba access hardening (SCRAM-SHA-256 vs.\ MD5, scoped IP ranges), audit log analysis, secret management (SSM Parameter Store SecureString).
+    \item \textbf{IaC, Automation \& Testing:} Terraform, Terragrunt, Python, Bash, PowerShell, SQL, PL/pgSQL, Playwright, Git.
     \item \textbf{Languages:} English (B2 Certified, BRASAS --- daily technical documentation and incident response), Portuguese (Native).
 \end{itemize}
 
@@ -52,10 +52,10 @@ Production Support Engineer (PSE) and SRE supporting critical distributed platfo
 
 Engineering reliability and observability for a distributed cloud platform powering AI agents, VoIP dialers, and microservices.
 \begin{itemize}[topsep=3pt]
-    \item \textbf{Database Saturation Diagnostics \& Capacity (Aurora MySQL):} Contributed to diagnosing CPU and connection saturation on a production Aurora cluster, separating load concentrated in a few queries, triggered by a large batch, from connection-pool amplification across microservices (instances $\times$ pool size above the cluster ceiling); the analysis supported prioritizing RDS Proxy.
-    \item \textbf{Detection Engineering \& Alerting Governance (New Relic / Terraform):} Audited hundreds of alert conditions via GraphQL API and identified an unsegmented policy driving roughly 40\% of incident volume and a baseline pattern that may fail to fire on sparse workloads; authored Aurora monitoring policies in Terraform calibrated on 7 days of measurements and recalibrated load alarms that sat in breach more than a third of the time and suppressed new pages.
-    \item \textbf{External Integration Root Cause (API / Observability):} Diagnosed intermittent failures in an external-service integration: schema validation inside the \texttt{try} block masked HTTP 200 responses as 500 errors; comparing logged errors against genuinely failed HTTP calls separated the hypotheses, and after the owning team's schema fix errors dropped from 9,428 to 3.
-    \item \textbf{Data Pipeline Incident Response (Airflow / Docker / SSM):} Led post-mortem for a data pipeline outage caused by disk exhaustion; bypassed SSH blockers via SSM without admin privileges, validated with historical data that an NRQL deadman alert would have detected the failure about 1h40 before human detection, and fixed an IaC disk rule where cross-mount averaging masked \textasciitilde{}99\% root saturation.
+    \item \textbf{Database Saturation Diagnostics \& Capacity (Aurora MySQL):} Contributed to diagnosing CPU and connection saturation on a production Aurora cluster, separating query-concentrated load (>90\% of writer load) triggered by a large batch from microservice connection-pool amplification (pools totaled \textasciitilde{}15\% above cluster ceiling); supported prioritizing RDS Proxy.
+    \item \textbf{Detection Engineering \& Alerting Governance (New Relic / Terraform):} Audited 400+ alert conditions via GraphQL, isolating an unsegmented policy driving \textasciitilde{}40\% of incident volume (\textasciitilde{}4,900/month) and a baseline pattern suppressing alerts on sparse workloads; authored Terraform policies calibrated on 7-day baselines, recalibrating load alarms breaching over a third of the time that suppressed incident pages.
+    \item \textbf{External Integration Root Cause (API / Observability):} Diagnosed intermittent failures in an external-service integration: schema validation inside the \texttt{try} block masked HTTP 200 responses as 500 errors; comparing logged errors against genuinely failed HTTP calls separated hypotheses, dropping errors from 9,428 to 3 after the owning team's schema fix.
+    \item \textbf{Data Pipeline Incident Response (Airflow / Docker / SSM):} Led post-mortem for a pipeline outage from disk exhaustion; bypassed SSH blockers via SSM without admin, cut potential MTTD from \textasciitilde{}2h to \textasciitilde{}10 min with an NRQL deadman alert (detecting failures 1h40 before human triage), and fixed an IaC disk rule where mount averaging masked 99.8\% root saturation.
     \item \textbf{Scheduler Outage \& Host Hardening (Systemd / SSM / Linux):} Traced root cause of a prolonged job-scheduler outage: monitoring checked proxy availability, not execution; during a controlled reboot, diagnosed boot races and missing restart policies, extended resilient systemd units and configured Slack failure alerts via \texttt{OnFailure}, with credentials in SSM Parameter Store.
     \item \textbf{K8s Resiliency (EKS / Karpenter / ArgoCD):} Strengthened cross-node replica distribution for the AI observability stack via GitOps/ArgoCD with strict \texttt{topologySpreadConstraints} (\texttt{DoNotSchedule}), preventing Karpenter single-node bin-packing after Spot node interruption.
 \end{itemize}
@@ -67,9 +67,9 @@ Engineering reliability and observability for a distributed cloud platform power
 
 Direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Maintained full independence on solo rotations, resolving P1/P2 incidents without escalation through deep structural analysis.
 \begin{itemize}[topsep=3pt]
-    \item \textbf{WAL Retention Investigation \& Guardrails:} Traced recurring fleet-wide disk exhaustion to orphaned slots in \texttt{pg\_replication\_slots} holding WAL segments for a decommissioned logical replication subscriber left uncleaned; built PowerShell automation detecting and dropping inactive slots (>2GB or >30 min inactive) and enforced server-side \texttt{max\_slot\_wal\_keep\_size} on PG13+ instances, eliminating disk-full data loss across the fleet.
-    \item \textbf{Disaster Recovery \& Access Hardening:} Parallelized cluster recovery across 30 databases (cutting downtime from hours to <5 min by automating \texttt{postmaster.pid} cleanup and startup WAL validation, removing human error under pressure); resolved client access lockouts from SCRAM-SHA-256 vs.\ MD5 mismatches in \texttt{pg\_hba.conf} by scoping MD5 permissions to legacy IP ranges while preserving SCRAM fleet-wide, maintaining strict security posture without OS reinstallations.
-    \item \textbf{Bloat Diagnostics \& Restore Optimization:} Investigated slow restore reports flagged by a junior engineer with no diagnostic detail, auditing \texttt{pg\_class}, \texttt{pg\_attribute}, and TOAST tables; traced 1GB/month bloat to encrypted file paths serialized across thousands of characters per audit log entry, and accelerated restores by 60\% (17 min down to 6:58) via parallelized \texttt{pg\_restore -j 4}.
+    \item \textbf{WAL Retention Investigation \& Guardrails:} Traced recurring fleet-wide disk exhaustion to orphaned slots in \texttt{pg\_replication\_slots} holding WAL segments for a decommissioned logical replication subscriber; built PowerShell automation detecting and dropping inactive slots without an active consumer (>2GB retained or stalling LSN progression), and enforced server-side \texttt{max\_slot\_wal\_keep\_size} on PG13+, eliminating recurring disk-full incidents.
+    \item \textbf{Disaster Recovery \& Access Hardening:} Parallelized cluster recovery across 30 databases (cutting downtime from hours to <5 min by automating \texttt{postmaster.pid} cleanup and startup WAL validation, removing human error under pressure); resolved client access lockouts in \texttt{pg\_hba.conf} by limiting MD5 permissions to scoped IP ranges for legacy clients while enforcing SCRAM-SHA-256 across the rest of the fleet.
+    \item \textbf{Bloat Diagnostics \& Restore Optimization:} Diagnosed slow restore reports by auditing \texttt{pg\_class}, \texttt{pg\_attribute}, and TOAST tables; traced 1GB/month bloat to encrypted file paths serialized across thousands of characters per audit log entry, and accelerated restores by 60\% (17 min down to 6:58) via parallelized \texttt{pg\_restore -j 4}.
     \item \textbf{70M-Record ETL Pipeline Engineering:} Designed autonomous pipeline across 15GB+ government dataset (70M+ records) in PL/pgSQL and PowerShell, reducing processing time by 60\% using \texttt{unlogged} tables to minimize write I/O overhead and dynamic SQL; implemented automated corporate tax classification and XML invoice auditing with staging in PostgreSQL.
     \item \textbf{Protected \$100k USD (R\$500k) in live inventory (zero data loss)} by reverse engineering an undocumented legacy database (Firebird) with no stored state; reprocessed 20 years of transaction logs to reconstruct inventory with full consistency, delivered the same day the schema was first accessed.
     \item \textbf{Reliability Culture, Mentorship \& AI-Assisted Triage:} Authored 20+ video walkthroughs and ITIL runbooks adopted as team standards, converting daily junior escalations into independent case resolution without senior intervention; engineered LLM-assisted triage injecting database context and SEFAZ fiscal rules, reducing diagnosis time from 30+ to <5 min.
@@ -88,12 +88,12 @@ Operated Cloud infrastructure and web operations for 70+ corporate clients (AWS 
 % Production Engineering Projects
 \section{Production Engineering Projects}
 
-\textbf{UV Flood Map (Omenix)} | Hydrological monitoring and flood simulation, in production \hfill Sep 2026 -- Present \\
-\textit{Author and operator} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
+\textbf{UV Flood Map (Omenix)} | Hydrological Monitoring \& Flood Simulation \hfill Jun 2026 -- Present \\
+\textit{Author and operator (in production since Sep 2026)} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
 \begin{itemize}[topsep=3pt]
-    \item Multi-source collection (Copel, ANA, ONS) with immutable raw payloads; Python API behind Nginx and DEM geoprocessing with caching and singleflight for concurrency protection.
-    \item Immutable releases with symlink rollback, systemd service hardening with memory limits, health and readiness endpoints, backups, and Playwright test suite.
-    \item Private experimental forecasting with immutable emission archives and prospective evaluation, isolated from public product.
+    \item Automated multi-source collection (Copel, ANA, ONS) integrating basin telemetric stations with immutable raw payloads; Python API behind Nginx and DEM geoprocessing with caching and singleflight under concurrency.
+    \item 120+ immutable releases with symlink rollback, systemd service hardening with memory limits (\texttt{MemoryMax}), health and readiness endpoints, backups, and Playwright test suite.
+    \item Private experimental forecasting with immutable emission archives and prospective scorecard evaluation, isolated from public product.
 \end{itemize}
 
 % Education and Awards
