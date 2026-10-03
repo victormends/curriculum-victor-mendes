@@ -38,8 +38,9 @@ Production Support Engineer (PSE) and SRE supporting critical distributed platfo
 \begin{itemize}
     \item \textbf{Cloud \& Infrastructure:} AWS (Aurora MySQL/RDS, EKS, CloudWatch, SSM), Kubernetes (Karpenter, ArgoCD, Topology Spread Constraints), Docker, Linux (systemd, boot/network troubleshooting).
     \item \textbf{Observability \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), OpenTelemetry, Incident Response (P1/P2), Post-Mortem / RCA (ITIL), Detection Engineering \& Runbooks, SLIs/SLOs.
-    \item \textbf{Databases:} AWS Aurora MySQL (Performance Insights, connection pooling, parameter groups), PostgreSQL (WAL, replication slots, bloat, EXPLAIN ANALYZE, pg\_class).
-    \item \textbf{IaC \& Automation:} Terraform, Terragrunt, Python, Bash, PowerShell, SQL, Git.
+    \item \textbf{Databases:} AWS Aurora MySQL (Performance Insights, connection pooling, parameter groups), PostgreSQL (WAL, replication slots, bloat, autovacuum, partial indexes, unlogged tables, \texttt{pg\_class}, \texttt{pg\_attribute}, \texttt{pg\_toast}, EXPLAIN ANALYZE).
+    \item \textbf{Security \& Access:} pg\_hba access hardening (SCRAM-SHA-256 vs.\ MD5, scoped IP ranges), RBAC, audit log analysis, secret management (SSM Parameter Store SecureString).
+    \item \textbf{IaC \& Automation:} Terraform, Terragrunt, Python, Bash, PowerShell, SQL, PL/pgSQL, Git.
     \item \textbf{Languages:} English (B2 Certified, BRASAS --- daily technical documentation and incident response), Portuguese (Native).
 \end{itemize}
 
@@ -66,12 +67,12 @@ Engineering reliability and observability for a distributed cloud platform power
 
 Direct L2/L3 support for 500+ corporate environments (1,500+ end-users). Maintained full independence on solo rotations, resolving P1/P2 incidents without escalation through deep structural analysis.
 \begin{itemize}[topsep=3pt]
-    \item \textbf{Eliminated WAL retention risk across the fleet:} built scheduled PowerShell monitor for PostgreSQL detecting and dropping inactive orphan replication slots (>2GB or >30 min inactive); enforced hard server-side limit via \texttt{max\_slot\_wal\_keep\_size} in PG13+.
-    \item \textbf{Automated disaster recovery and PostgreSQL provisioning:} parallelized cluster recovery across 30 databases (cutting downtime from hours to <5 min via \texttt{postmaster.pid} cleanup and WAL validation) and standardized Windows installation with runtime hardening (\textasciitilde{}2h down to <7 min).
-    \item \textbf{Diagnosed 1GB/month disk bloat} via \texttt{pg\_class} and \texttt{pg\_toast}; isolated root cause to encrypted audit trail filepaths serialized across thousands of characters; reduced restore time by 60\% (17 min down to 6:58) via \texttt{pg\_restore -j 4}.
-    \item \textbf{Built 70M-record ETL pipeline} (15GB+ government dataset) achieving a 60\% processing time reduction; implemented automated corporate tax classification and XML invoice auditing with staging in PostgreSQL.
-    \item \textbf{Protected \$100k USD (R\$500k) in critical inventory (zero data loss)} by reverse engineering an undocumented legacy database (Firebird); reprocessed 20 years of transaction logs to restore state with full consistency, delivered the same day the schema was first accessed.
-    \item \textbf{Established reliability and mentoring culture:} authored 20+ video guides, runbooks, and ITIL post-mortems accelerating junior onboarding; engineered LLM-assisted triage with database context injection, reducing fiscal diagnostic time from 30+ to <5 min.
+    \item \textbf{WAL Retention Investigation \& Guardrails:} Traced recurring fleet-wide disk exhaustion to orphaned slots in \texttt{pg\_replication\_slots} holding WAL segments for a decommissioned logical replication subscriber left uncleaned; built PowerShell automation detecting and dropping inactive slots (>2GB or >30 min inactive) and enforced server-side \texttt{max\_slot\_wal\_keep\_size} on PG13+ instances, eliminating disk-full data loss across the fleet.
+    \item \textbf{Disaster Recovery \& Access Hardening:} Parallelized cluster recovery across 30 databases (cutting downtime from hours to <5 min by automating \texttt{postmaster.pid} cleanup and startup WAL validation, removing human error under pressure); resolved client access lockouts from SCRAM-SHA-256 vs.\ MD5 mismatches in \texttt{pg\_hba.conf} by scoping MD5 permissions to legacy IP ranges while preserving SCRAM fleet-wide, maintaining strict security posture without OS reinstallations.
+    \item \textbf{Bloat Diagnostics \& Restore Optimization:} Investigated slow restore reports flagged by a junior engineer with no diagnostic detail, auditing \texttt{pg\_class}, \texttt{pg\_attribute}, and TOAST tables; traced 1GB/month bloat to encrypted file paths serialized across thousands of characters per audit log entry, and accelerated restores by 60\% (17 min down to 6:58) via parallelized \texttt{pg\_restore -j 4}.
+    \item \textbf{70M-Record ETL Pipeline Engineering:} Designed autonomous pipeline across 15GB+ government dataset (70M+ records) in PL/pgSQL and PowerShell, reducing processing time by 60\% using \texttt{unlogged} tables to minimize write I/O overhead and dynamic SQL; implemented automated corporate tax classification and XML invoice auditing with staging in PostgreSQL.
+    \item \textbf{Protected \$100k USD (R\$500k) in live inventory (zero data loss)} by reverse engineering an undocumented legacy database (Firebird) with no stored state; reprocessed 20 years of transaction logs to reconstruct inventory with full consistency, delivered the same day the schema was first accessed.
+    \item \textbf{Reliability Culture, Mentorship \& AI-Assisted Triage:} Authored 20+ video walkthroughs and ITIL runbooks adopted as team standards, converting daily junior escalations into independent case resolution without senior intervention; engineered LLM-assisted triage injecting database context and SEFAZ fiscal rules, reducing diagnosis time from 30+ to <5 min.
 \end{itemize}
 
 \vspace{6pt}
