@@ -18,14 +18,14 @@
   </a>
 </p>
 
-This repository contains the LaTeX source and compiled PDFs for my professional résumé (EN) and currículo (PT-BR), focused on **L2/L3 Technical Support Engineering, PostgreSQL Infrastructure, and ETL Automation.**
+This repository contains the LaTeX source and compiled PDFs for my professional résumé (EN) and currículo (PT-BR), focused on **Site Reliability Engineering (SRE), Cloud Observability, and Database Reliability.**
 
 The repository exists to keep the résumé auditable: the source, wording changes, and compiled PDF are version-controlled together instead of maintained as an opaque document export.
 
 ## Profile Focus
-- **PostgreSQL Specialist:** Deep-dive diagnostics involving WAL management, replication slots, and system catalog internals.
-- **Support Operations:** High-throughput incident response (80+ tickets/week) with a focus on de-escalation and structural RCA.
-- **Automation:** Systems-level PowerShell and SQL pipelines for infrastructure recovery and massive dataset ingestion.
+- **Database Reliability:** Deep-dive diagnostics involving relational database capacity, connection pooling, and replication internals (Aurora MySQL, PostgreSQL).
+- **Observability & SRE:** Alerting governance, baseline calibrations, and structural noise reduction via API and IaC (New Relic, Terraform).
+- **Incident Response & Automation:** Root cause analysis, host hardening, and resilient distributed systems recovery (Linux, Kubernetes, ArgoCD).
 
 ## Source
 - **Layout:** Clean, single-column layout built on the standard `article` class.
