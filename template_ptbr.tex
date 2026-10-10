@@ -1,7 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
 \usepackage[left=0.55in,top=0.25in,right=0.55in,bottom=0.25in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -9,11 +8,11 @@
 \usepackage{xcolor}
 \usepackage{charter}
 
-% Section formatting
+% Formatação de seções
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{2.8pt}{1.4pt}
 
-% Itemize formatting
+% Formatação de listas
 \setlist[itemize]{leftmargin=0.15in, labelsep=0.08in, topsep=0.3pt, itemsep=0.3pt, parsep=0pt}
 
 \pagestyle{empty}
@@ -24,7 +23,7 @@
 \begin{center}
     {\huge \textbf{João Victor Mendes}} \\
     \vspace{2pt}
-    {\large Production Support Engineer (PSE) / SRE | Cloud · Observabilidade · Database Reliability} \\
+    {\large Production Support Engineer (PSE) / SRE | Cloud · Observabilidade · Confiabilidade de Banco} \\
     \vspace{1.5pt}
     \href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor} | \href{https://github.com/victormends}{github.com/victormends} | \href{mailto:j.victor8@hotmail.com}{j.victor8@hotmail.com} | +55 (41) 99593-8387 \\
     União da Vitória, PR, Brasil (UTC-3)
@@ -32,18 +31,18 @@
 
 % Resumo Profissional
 \section{Resumo Profissional}
-Engenheiro de Confiabilidade (SRE) e Suporte de Produção com \textasciitilde{}4 anos de experiência, sustentando frotas de 500+ ambientes corporativos (1.500+ usuários) e plataformas em nuvem (FinTech e IA). Atuação em diagnóstico de saturação e internals de bancos relacionais (Aurora MySQL, PostgreSQL), resposta a incidentes P1/P2, engenharia de detecção com redução de MTTD validada em replay de incidente e post-mortems orientados à causa-raiz estrutural. Autor e operador de plataforma hidrológica pública em produção (>3,2M de registros).
+Engenheiro de Suporte de Produção (PSE) / SRE com \textasciitilde{}4 anos de experiência sustentando frotas corporativas de 500+ ambientes (1.500+ usuários) e plataformas distribuídas em nuvem (FinTech e IA). Forte atuação em internals de bancos de dados relacionais (PostgreSQL, Aurora MySQL), diagnósticos de saturação, resposta a incidentes P1/P2 e engenharia de detecção com redução de MTTD validada em replay de incidentes. Autor e operador de plataforma hidrológica pública ativa em produção (>3,2M de registros).
 
 % Habilidades Técnicas
 \section{Habilidades Técnicas}
 \begin{itemize}
-    \item \textbf{Cloud \& Infraestrutura:} AWS (Aurora MySQL/RDS, EC2, EKS, SSM, CloudFront, Route 53, ACM), Kubernetes (Karpenter, ArgoCD GitOps, Pod Topology Spread Constraints), Docker, Linux (systemd, troubleshooting de boot/rede), Nginx.
-    \item \textbf{Observabilidade \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), Resposta a Incidentes (P1/P2), Post-Mortem / RCA (ITIL), Engenharia de Detecção \& Runbooks.
-    \item \textbf{Bancos de Dados:} AWS Aurora MySQL (Performance Insights, connection pooling), PostgreSQL (WAL, slots de replicação, tabelas unlogged, catálogos pg\_class/pg\_toast, EXPLAIN ANALYZE), Firebird.
+    \item \textbf{Cloud \& Infraestrutura:} AWS (Aurora MySQL/RDS, EC2, EKS, SSM, CloudFront, Route 53, ACM), Kubernetes (Karpenter, ArgoCD GitOps, Pod Topology Spread Constraints), Docker, Linux (systemd, boot/network troubleshooting), Nginx.
+    \item \textbf{Observabilidade \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), Resposta a Incidentes (P1/P2), Pós-Mortem / RCA (ITIL), Engenharia de Detecção \& Runbooks.
+    \item \textbf{Bancos de Dados:} AWS Aurora MySQL (Performance Insights, connection pooling), PostgreSQL (WAL, replication slots, unlogged tables, pg\_class/pg\_toast catalogs, EXPLAIN ANALYZE), Firebird.
     \item \textbf{Backend \& Orquestração:} Python, Airflow, Bash, PowerShell.
     \item \textbf{IaC, Automação \& Testes:} Terraform, SQL, PL/pgSQL, Playwright, Git.
-    \item \textbf{Segurança \& Acesso:} Hardening de pg\_hba (SCRAM-SHA-256 vs.\ MD5, restrições por faixa de IP), auditoria de logs, gestão segura de segredos (SSM Parameter Store SecureString).
-    \item \textbf{Idiomas:} Inglês (B2 Certificado pelo BRASAS; leitura e escrita técnica diária), Português (Nativo).
+    \item \textbf{Segurança \& Acesso:} Hardening pg\_hba (SCRAM-SHA-256 vs.\ MD5, IP ranges restritos), análise de logs de auditoria, gestão de secrets (SSM Parameter Store SecureString).
+    \item \textbf{Idiomas:} Inglês (Certificação B2 pelo BRASAS; documentação técnica diária e resposta a incidentes), Português (Nativo).
 \end{itemize}
 
 % Experiência Profissional
@@ -54,54 +53,54 @@ Engenheiro de Confiabilidade (SRE) e Suporte de Produção com \textasciitilde{}
 
 Sustentação da confiabilidade e observabilidade de plataforma em nuvem para microsserviços, discadores VoIP e agentes de IA (22 PRs mergeados em 8 semanas em backend, infraestrutura e GitOps).
 \begin{itemize}[topsep=1.5pt]
-    \item \textbf{Diagnóstico de Saturação de Banco \& Capacidade (Aurora MySQL):} Diagnosticou saturação crítica de CPU e conexões em cluster Aurora com represamento de 383 jobs em filas de IA, isolando a causa-raiz em escritas sem batching (>90\% do load de escrita no Performance Insights) e pools somados \textasciitilde{}15\% acima do teto de conexões do cluster; definiu limites de conexão por microsserviço e recomendou a adoção de RDS Proxy como evolução arquitetural.
-    \item \textbf{Engenharia de Detecção \& Calibração de Alertas (New Relic / Terraform / Metabase):} Auditou centenas de alert conditions via GraphQL, identificando política sem segmentação e baselines com falha matemática em que a diluição por volume saudável atrasava detecções críticas em horas. Em backtest no Metabase, a contagem por sessões distintas antecipou detecções em \textasciitilde{}2,5h e reduziu aberturas em 62\% (124 para 47), calibrando regras compostas em Terraform para corte de falsos-positivos sem perda de cobertura.
+    \item \textbf{Diagnóstico de Saturação de Banco \& Capacidade (Aurora MySQL):} Diagnosticou saturação crítica de CPU e conexões em cluster Aurora durante represamento em filas assíncronas de IA (383 jobs), isolando a causa-raiz em escritas sem batching (>90\% do load de escrita no Performance Insights) e pools somados \textasciitilde{}15\% acima do teto de conexões do cluster; definiu limites de conexão por microsserviço e recomendou a adoção de RDS Proxy.
+    \item \textbf{Engenharia de Detecção \& Calibração de Alertas (New Relic / Terraform / Metabase):} Auditou centenas de alert conditions via GraphQL, identificando política sem segmentação e baselines com falha matemática em que a diluição por volume saudável atrasava detecções críticas em horas. Em backtest no Metabase, a contagem por sessões distintas antecipou detecções em \textasciitilde{}2,5h e reduziu aberturas em 62\% (124 para 47), calibrando regras compostas em Terraform para redução de ruído sem perda de cobertura.
     \item \textbf{Causa-Raiz em Integração Externa (API / Observabilidade):} Diagnosticou falhas intermitentes em integração com provedor externo rastreando validação de schema dentro do bloco \texttt{try} que mascarava HTTP 200 como erro 500; a correlação de telemetria entre chamadas HTTP reais e logs de erro isolou o falso-positivo, resultando em queda de mais de 99,9\% nos erros de integração após a correção do schema.
-    \item \textbf{Resposta a Incidente de Pipeline (Airflow / Docker / SSM):} Liderou pós-mortem de indisponibilidade por exaustão de disco em pipeline de dados, contornando bloqueios de SSH via SSM sem privilégios de admin; implementou deadman alert em NRQL (via Terraform com runbook) que, em replay do incidente, reduziria o MTTD de 2h02 para \textasciitilde{}10 min (\textasciitilde{}1h50 antes da detecção humana), e corrigiu regra de disco em IaC onde a média entre partições mascarava 99,9\% de saturação na raiz.
-    \item \textbf{Confiabilidade de Agendador \& Hardening de Host (Systemd / SSM / Linux):} Identificou causa-raiz de indisponibilidade de mais de 10h no agendador de jobs (Cronicle), não detectada porque o monitoramento verificava o proxy HTTP em vez da execução dos jobs; em reboot controlado, diagnosticou corrida de boot no nginx, corrigida com \texttt{After=network-online.target} para conter falhas em cascata nos serviços essenciais do host, estendeu units systemd resilientes e configurou alertas via \texttt{OnFailure} no Slack com credenciais seguras no SSM.
-    \item \textbf{Mitigação de SPOF \& Resiliência K8s (EKS / Karpenter / ArgoCD):} Eliminou o ponto único de falha (SPOF) em nó na stack de observabilidade de IA (Langfuse) após interrupção de nós Spot; reestruturou o deployment via ArgoCD aplicando \texttt{topologySpreadConstraints} estrito (\texttt{DoNotSchedule}) para forçar distribuição multi-nó pelo Karpenter, viabilizando alta disponibilidade com réplicas em nós distintos ao custo adicional medido de \textasciitilde{}US\$ 35/mês.
+    \item \textbf{Resposta a Incidente de Pipeline (Airflow / Docker / SSM):} Liderou pós-mortem de indisponibilidade por exaustão de disco em pipeline de dados, restaurando acesso ao host via AWS Systems Manager (SSM) sob roles IAM de menor privilégio; implementou deadman alert em NRQL (via Terraform com runbook) que, em replay do incidente, reduziria o MTTD de 2h02 para \textasciitilde{}10 min (\textasciitilde{}1h50 antes da detecção humana), e corrigiu regra de disco em IaC onde a média entre partições mascarava 99,9\% de saturação na raiz.
+    \item \textbf{Confiabilidade de Agendador \& Hardening de Host (Cronicle / Systemd / Linux):} Identificou causa-raiz de indisponibilidade não detectada de mais de 10h no agendador de jobs (Cronicle) causada por health checks validando HTTP 200 do proxy reverso em vez da execução dos jobs; em reboot controlado, corrigiu corridas de boot via \texttt{After=network-online.target} contendo falhas em cascata, estendeu políticas resilientes de reinício no systemd em 10+ serviços centrais do host e configurou alertas no Slack via \texttt{OnFailure} com credenciais no SSM.
+    \item \textbf{Mitigação de SPOF \& Resiliência K8s (EKS / Karpenter / ArgoCD):} Eliminou o ponto único de falha (SPOF) em nó na stack de observabilidade de IA (Langfuse) após interrupção de nós Spot; reestruturou o deployment via ArgoCD aplicando \texttt{topologySpreadConstraints} estrito (\texttt{DoNotSchedule}) para evitar empacotamento em nó único (bin-packing) pelo Karpenter, viabilizando alta disponibilidade multi-nó em produção ao custo adicional medido de \textasciitilde{}US\$ 35/mês em capacidade spot.
 \end{itemize}
 
 \newpage
 
-\textbf{Pedroso Automação} | ERP SaaS de conformidade fiscal B2B \hfill Jun 2024 -- Ago 2026 \\
-\textit{Engenheiro de Suporte Técnico L2/L3} \hfill União da Vitória, PR
+\textbf{Pedroso Automação} | ERP SaaS para conformidade fiscal B2B \hfill Jun 2024 -- Ago 2026 \\
+\textit{Engenheiro de Suporte Técnico (L2/L3)} \hfill União da Vitória, PR
 
-Suporte L2/L3 direto para 500+ ambientes corporativos (1.500+ usuários finais), sustentando média de 80+ chamados semanais em rotações solo e resolução de incidentes P1/P2.
+Suporte L2/L3 direto a 500+ ambientes corporativos (1.500+ usuários finais), sustentando média de 80+ tickets técnicos/semana em rotações solo e resolvendo incidentes P1/P2.
 \begin{itemize}[topsep=0.8pt]
-    \item \textbf{Investigação de Retenção de WAL \& Guardrails de Replicação:} Rastreou exaustão recorrente de disco na frota até slots órfãos no \texttt{pg\_replication\_slots} retendo WAL para assinante desativado em replicação lógica; construiu automação em PowerShell para expurgo (>2GB ou >30 min sem consumidor) e aplicou \texttt{max\_slot\_wal\_keep\_size} no PG13+, sem recorrência de exaustão de disco nos ambientes em que a rotina foi adotada.
-    \item \textbf{Padronização de Frota \& Governança (PostgreSQL):} Automatizou o provisionamento de instâncias PostgreSQL via scripts padronizados (2h para 7 min, ~3 servidores/semana) e aplicou hardening de autenticação: SCRAM-SHA-256 por padrão e MD5 restrito por IP no \texttt{pg\_hba.conf} para clientes legados.
-    \item \textbf{Recuperação de Clusters \& Orquestração pós-Crash (PostgreSQL):} Reduziu o tempo de recuperação de host com 30 bancos de \textasciitilde{}3h para <5 min via inicialização paralela em ondas com teto de concorrência, limpeza segura de \texttt{postmaster.pid} órfão e validação prévia de WAL no boot, e impediu a execução automática de \texttt{pg\_resetwal}, exigindo decisão do operador.
-    \item \textbf{Diagnóstico de Crescimento de Dados \& Otimização de Restore:} Diagnosticou restaurações lentas auditando catálogos do PostgreSQL e tabelas TOAST; rastreou crescimento anômalo de \textasciitilde{}1GB/mês a caminhos serializados em logs de auditoria (definindo rotina de expurgo) e reduziu o restore de 17 para 7 min (\texttt{pg\_restore -j~4}).
-    \item \textbf{Engenharia de Pipeline ETL de 70M de Registros:} Projetou pipeline autônomo sobre dataset governamental de 15GB+ (70M+ registros) em PL/pgSQL e PowerShell com tabelas \texttt{unlogged} (minimizando overhead de I/O de escrita), reduzindo o tempo em 60\% (de \textasciitilde{}4h para \textasciitilde{}1h30) com paralelismo e ordenação em lote.
-    \item \textbf{Recuperação de Dados Críticos \& Engenharia Reversa (Firebird):} Protegeu centenas de milhares de reais em inventário ativo (10.000+ itens) ao fazer engenharia reversa de banco relacional legado sem documentação com apoio de IA, reprocessando 20 anos de logs com zero data loss validado por conciliação contábil e fiscal, entregue no mesmo dia do primeiro acesso.
-    \item \textbf{Runbooks \& Triagem Assistida por LLM:} Elaborou 20+ runbooks ITIL e vídeos de treinamento que permitiram a técnicos N1 resolver escaladas diárias de forma autônoma; implementou triagem por LLM com injeção de schema do banco e regras fiscais, reduzindo o tempo de diagnóstico de 30+ para <5 min.
+    \item \textbf{Investigação de Retenção de WAL \& Guardrails de Replicação:} Rastreou exaustão recorrente de disco na frota a slots órfãos em \texttt{pg\_replication\_slots} retendo WAL de assinantes desativados de replicação lógica; construiu automação PowerShell removendo slots inativos (>2GB ou >30 min sem consumidor) e aplicou \texttt{max\_slot\_wal\_keep\_size} no PG13+, sem recorrência de exaustão de disco nos ambientes em que a rotina foi adotada.
+    \item \textbf{Padronização de Frota \& Governança (PostgreSQL):} Automatizou provisionamento de instâncias PostgreSQL via scripts padronizados (reduzindo setup de 2h para 7 min, \textasciitilde{}3 servidores/semana) e aplicou hardening de autenticação: SCRAM-SHA-256 por padrão e restrição de MD5 por IP no \texttt{pg\_hba.conf} para clientes legados.
+    \item \textbf{Recuperação de Cluster \& Orquestração de Crash-Recovery (PostgreSQL):} Reduziu tempo de recuperação de host em 30 bancos de dados de \textasciitilde{}3h para <5 min via inicialização paralela em ondas com limites de concorrência, limpeza segura de \texttt{postmaster.pid} órfão e validação prévia de WAL, prevenindo execução automatizada de \texttt{pg\_resetwal} sem operador.
+    \item \textbf{Diagnóstico de Crescimento de Dados \& Otimização de Restore:} Diagnosticou lentidão em restores auditando catálogos do PostgreSQL e armazenamento TOAST; rastreou crescimento anômalo de \textasciitilde{}1GB/mês a caminhos serializados em logs de auditoria (estabelecendo rotina de expurgo) e acelerou restore de 17 para 7 min (\texttt{pg\_restore -j~4}).
+    \item \textbf{Engenharia de Pipeline ETL para 70M de Registros:} Desenvolveu pipeline autônomo para base governamental de 15GB+ (70M+ registros) em PL/pgSQL e PowerShell com tabelas \texttt{unlogged} (minimizando overhead de I/O em disco), reduzindo tempo de processamento em 60\% (de \textasciitilde{}4h para \textasciitilde{}1h30) com ordenação em lote e paralelismo.
+    \item \textbf{Recuperação de Dados Críticos \& Engenharia Reversa (Firebird):} Protegeu centenas de milhares de dólares em inventário ativo (10.000+ itens) ao fazer engenharia reversa de banco legado sem documentação com auxílio de IA, reprocessando 20 anos de logs com zero perda de dados validada contra balancetes contábeis e fiscais, entregue no dia do primeiro acesso ao schema.
+    \item \textbf{Runbooks \& Triagem Assistida por LLM:} Produziu 20+ runbooks ITIL e materiais de capacitação habilitando engenheiros L1 a resolver escalações diárias com autonomia; implementou triagem assistida por LLM injetando schema do banco e regras fiscais, reduzindo tempo de diagnóstico de 30+ para <5 min.
 \end{itemize}
 
 \vspace{1pt}
 \textbf{Girafa Comunicação Interativa} | Agência Digital \hfill Set 2022 -- Abr 2024 \\
-\textit{AWS Support Engineer | Infraestrutura Cloud \& Aplicações Web} \hfill Remoto, Brasil
+\textit{Engenheiro de Suporte AWS | Infraestrutura Cloud \& Aplicações Web} \hfill Remoto, Brasil
 
-Sustentação de infraestrutura AWS e suporte técnico para 70+ clientes corporativos em equipe multidisciplinar.
+Sustentação de infraestrutura cloud AWS e suporte técnico para 70+ clientes corporativos em equipe multidisciplinar.
 \begin{itemize}[topsep=0.8pt]
-    \item \textbf{Operações Cloud AWS, DNS \& Governança de Releases:} Administrou nuvem e DNS corporativo em AWS (EC2, RDS MySQL 8, CloudFront, ACM) e Route 53 com registradores externos (Registro.br, Locaweb); executou 15+ migrações de zonas DNS com redução prévia de TTL e sem incidentes reportados de e-mail ou web, isolou falhas entre CDN, DNS e autenticação (SPF, DKIM, DMARC) e coordenou deploys em etapas via Git.
-    \item \textbf{Resposta a Incidente de Segurança \& Interlocução Internacional:} Investigou invasão auditando histórico de Git, CMS e logs de acesso para isolar vetor de ataque, contendo a ameaça em <24h a partir da detecção via revogação de sessões e rotação de credenciais em 10+ ambientes; atuou como interlocutor técnico em inglês com fornecedores nos EUA e Europa para escalonamentos e causa-raiz.
+    \item \textbf{Operações Cloud AWS, DNS \& Governança de Releases:} Administrou infraestrutura cloud e DNS corporativo na AWS (EC2, RDS MySQL 8, CloudFront, ACM) e Route 53 com registradores externos (Registro.br, Locaweb); executou 15+ migrações de zonas de DNS com redução prévia de TTL e zero indisponibilidade reportada de e-mail ou web, isolou domínios de falha entre CDN, DNS e autenticação de e-mail (SPF, DKIM, DMARC), e coordenou deploys Git em estágios com freeze e validação pré-produção.
+    \item \textbf{Resposta a Incidentes de Segurança \& Articulação Técnica:} Investigou incidente de segurança auditando commits Git, perfis de CMS e logs de acesso para isolar vetor de ataque, contendo a ameaça em menos de 24h da detecção via revogação de sessões e rotação de credenciais em 10+ ambientes; atuou como ponto de contato técnico em inglês com provedores dos EUA e Europa em escalações e análise de causa-raiz.
 \end{itemize}
 
-% Projetos de Engenharia em Produção
-\section{Projetos de Engenharia em Produção}
+% Projetos de Engenharia de Produção
+\section{Projetos de Engenharia de Produção}
 
 \textbf{Monitoramento do Rio Iguaçu} | Plataforma Hidrológica \& Simulação de Cheias \hfill Jun 2026 -- Atual \\
-\textit{Autor e responsável pela operação (em produção desde Set 2026)} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
+\textit{Autor e operador (em produção desde Set 2026)} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
 \begin{itemize}[topsep=0.8pt]
-    \item \textbf{Ingestão de Telemetria Multifonte \& Confiabilidade de Dados:} Pipeline autônomo (timer systemd a cada 15 min) integrando 5 estações telemétricas da bacia e a série histórica da ANA (desde 1930), Copel e ONS, acumulando >3,28 milhões de registros imutáveis; implementou validação estrita de schema e verificações de frescor que isolam quebras de upstream sem corromper a série temporal histórica.
-    \item \textbf{Confiabilidade Operacional sob Pico de Tráfego:} Atendeu 2,7M+ requisições no subdomínio do Jornal O Comércio desde o deploy (set/2026) e absorveu pico de 43k req/hora durante cheia (cota de alerta de 5,5 m, >20x o tráfego basal) sem indisponibilidade registrada. O pico coube em VPS de 4 GB de RAM (2 vCPUs) graças a camadas GeoJSON pré-computadas servidas pelo Nginx (ETag/Cache-Control) e singleflight no backend Python contra sobrecarga de DEM; a operação conta com 120+ releases imutáveis, rollback por symlink, testes E2E com Playwright e isolamento systemd (\texttt{ProtectSystem=strict}).
+    \item \textbf{Ingestão de Telemetria Multi-Fonte \& Confiabilidade de Dados:} Pipeline autônomo (timer systemd de 15 min) integrando 5 estações telemétricas de bacia e série histórica da ANA (desde 1930), além de dados operacionais da Copel e ONS, acumulando >3,28 milhões de registros imutáveis; implementou validação estrita de schema e verificações de frescor de dados que isolam quebras de layout ou payload upstream sem corromper a série histórica.
+    \item \textbf{Confiabilidade Operacional sob Pico de Tráfego:} Atendeu 2,7M+ de requisições no domínio do Jornal O Comércio desde a implantação (Set 2026) e absorveu pico de 43k req/hora durante cheia (cota de alerta 5,5m, tráfego >20x o baseline) sem indisponibilidade registrada. Operou o pico em VPS de 4 GB RAM (2 vCPUs) com camadas GeoJSON pré-computadas servidas via Nginx (ETag/Cache-Control) e concorrência singleflight no backend Python contra picos de cálculo DEM; operação conta com 120+ releases imutáveis, rollbacks por symlink, testes E2E com Playwright e isolamento no systemd (\texttt{ProtectSystem=strict}).
 \end{itemize}
 
 % Formação e Prêmios
 \section{Formação \& Prêmios}
 \textbf{FGV | Ciência de Dados \& Economia (2020--2022, 4 semestres concluídos)} \hfill Rio de Janeiro, Brasil \\
-Bolsista integral (OBMEP). Foco em probabilidade, estatística e programação.
+Bolsista integral nacional por mérito (OBMEP). Foco em probabilidade, estatística aplicada e programação.
 
 \vspace{0.8pt}
 \textbf{IFPR | Análise e Desenvolvimento de Sistemas (2023--2024, 3 semestres concluídos)} \hfill União da Vitória, Brasil \\
@@ -109,8 +108,6 @@ Foco em algoritmos, modelagem de banco de dados e redes de computadores.
 
 \vspace{0.8pt}
 \textbf{Medalha de Prata | Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP, 2016)} \hfill Nacional \\
-Premiado no top 0,01\% nacional entre 18M+ participantes; Medalha de Bronze (2014) e 2x Menções Honrosas.
+Classificação nacional no top 0,01\% entre 18M+ participantes; Medalha de Bronze (2014) e 2x Menções Honrosas.
 
 \end{document}
-
-
