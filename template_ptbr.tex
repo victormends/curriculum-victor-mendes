@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazilian]{babel}
-\usepackage[left=0.55in,top=0.25in,right=0.55in,bottom=0.25in]{geometry}
+\usepackage[left=0.55in,top=0.32in,right=0.55in,bottom=0.32in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -11,10 +11,10 @@
 
 % Section formatting
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2.8pt}{1.4pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
 % Itemize formatting
-\setlist[itemize]{leftmargin=0.15in, labelsep=0.08in, topsep=0.3pt, itemsep=0.3pt, parsep=0pt}
+\setlist[itemize]{leftmargin=0.16in, labelsep=0.08in, topsep=1pt, itemsep=1.2pt, parsep=0pt}
 
 \pagestyle{empty}
 
@@ -24,90 +24,78 @@
 \begin{center}
     {\huge \textbf{João Victor Mendes}} \\
     \vspace{2pt}
-    {\large Production Support Engineer (PSE) / SRE | Cloud · Observabilidade · Database Reliability} \\
+    {\large Site Reliability \& Production Support Engineer | Cloud · Observabilidade · Database Reliability} \\
     \vspace{1.5pt}
     \href{https://linkedin.com/in/mendes-victor}{linkedin.com/in/mendes-victor} | \href{https://github.com/victormends}{github.com/victormends} | \href{mailto:j.victor8@hotmail.com}{j.victor8@hotmail.com} | +55 (41) 99593-8387 \\
-    União da Vitória, PR, Brasil (UTC-3)
+    União da Vitória, PR, Brasil (\mbox{UTC-3})
 \end{center}
 
 % Resumo Profissional
 \section{Resumo Profissional}
-Engenheiro de Confiabilidade (SRE) e Suporte de Produção com \textasciitilde{}4 anos de experiência, sustentando frotas de 500+ ambientes corporativos (1.500+ usuários) e plataformas em nuvem (FinTech e IA). Atuação em diagnóstico de saturação e internals de bancos relacionais (Aurora MySQL, PostgreSQL), resposta a incidentes P1/P2, engenharia de detecção com redução de MTTD validada em replay de incidente e post-mortems orientados à causa-raiz estrutural. Autor e operador de plataforma hidrológica pública em produção (>3,2M de registros).
+Engenheiro de Confiabilidade (SRE) e Suporte de Produção focado em confiabilidade de bancos relacionais (PostgreSQL, Aurora MySQL), observabilidade em nuvem e resposta a incidentes. \textasciitilde{}4 anos sustentando frotas de 500+ ambientes corporativos (1.500+ usuários) e plataformas cloud FinTech/IA distribuídas, com atuação prática em troubleshooting \mbox{P1/P2}, engenharia de detecção (Terraform/NRQL) e \mbox{post-mortems} de \mbox{causa-raiz}. Autor e operador de plataforma hidrológica pública em produção (\href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com} --- >3,28M registros, 2,7M+ requisições, pico de 43k req/h).
 
 % Habilidades Técnicas
 \section{Habilidades Técnicas}
 \begin{itemize}
-    \item \textbf{Cloud \& Infraestrutura:} AWS (Aurora MySQL/RDS, EC2, EKS, SSM, CloudFront, Route 53, ACM), Kubernetes (Karpenter, ArgoCD GitOps, Pod Topology Spread Constraints), Docker, Linux (systemd, troubleshooting de boot/rede), Nginx.
-    \item \textbf{Observabilidade \& SRE:} New Relic (NRQL, NerdGraph API, baseline/alerting), Resposta a Incidentes (P1/P2), Post-Mortem / RCA (ITIL), Engenharia de Detecção \& Runbooks.
-    \item \textbf{Bancos de Dados:} AWS Aurora MySQL (Performance Insights, connection pooling), PostgreSQL (WAL, slots de replicação, tabelas unlogged, catálogos pg\_class/pg\_toast, EXPLAIN ANALYZE), Firebird.
-    \item \textbf{Backend \& Orquestração:} Python, Airflow, Bash, PowerShell.
-    \item \textbf{IaC, Automação \& Testes:} Terraform, SQL, PL/pgSQL, Playwright, Git.
-    \item \textbf{Segurança \& Acesso:} Hardening de pg\_hba (SCRAM-SHA-256 vs.\ MD5, restrições por faixa de IP), auditoria de logs, gestão segura de segredos (SSM Parameter Store SecureString).
-    \item \textbf{Idiomas:} Inglês (B2 Certificado pelo BRASAS; leitura e escrita técnica diária), Português (Nativo).
+    \item \textbf{Bancos de Dados \& Dados:} PostgreSQL (WAL, slots de replicação, tabelas \texttt{unlogged}, \texttt{pg\_class}/\texttt{pg\_toast}, \mbox{\texttt{pg\_hba.conf}} \mbox{SCRAM-SHA-256}, \mbox{\texttt{EXPLAIN ANALYZE}}), AWS Aurora MySQL (Performance Insights, limites de conexão, RDS Proxy), Firebird, SQL, PL/pgSQL.
+    \item \textbf{Cloud, Linux \& Containers:} AWS (RDS/Aurora, ElastiCache Redis, EC2, EKS, SSM Parameter Store/Session Manager, CloudFront, Route 53, ACM), Kubernetes (Karpenter, ArgoCD GitOps, \mbox{\texttt{topologySpreadConstraints}}), Docker, Linux (\texttt{systemd}, diagnóstico de boot/rede), Nginx.
+    \item \textbf{Observabilidade, IaC \& Incident Ops:} New Relic (NRQL, API NerdGraph, alertas compostos e deadman watchdogs), AWS CloudWatch Metric Streams, Terraform, Resposta a Incidentes \mbox{P1/P2}, \mbox{Post-Mortem/RCA} (ITIL) \& Runbooks.
+    \item \textbf{Programação \& Automação:} Python, Bash, PowerShell, Apache Airflow, Playwright (E2E), Git.
+    \item \textbf{Idiomas:} Inglês --- B2 Certificado \textit{(BRASAS; RCAs com fornecedores EUA/Europa, documentação técnica e resposta a incidentes diárias)} · Português \textit{(Nativo)}.
 \end{itemize}
 
 % Experiência Profissional
 \section{Experiência Profissional}
 
-\textbf{Monest} | Fintech de Recuperação de Crédito e Plataforma de IA \hfill Ago 2026 -- Atual \\
+\textbf{Monest} | Fintech de Recuperação de Crédito e Plataforma de IA \hfill \mbox{Ago 2026 -- Atual} \\
 \textit{Production Support Engineer (PSE) / SRE} \hfill Remoto, Brasil
 
-Sustentação da confiabilidade, observabilidade e resposta a incidentes de plataforma em nuvem distribuída para microsserviços, filas assíncronas e agentes de IA.
+Atuação em time enxuto de SRE com ownership direto de triagem \mbox{P1/P2}, plantão e entregas em produção via Terraform/GitOps para plataforma distribuída FinTech/IA.
 \begin{itemize}[topsep=1.5pt]
-    \item \textbf{Diagnóstico de Saturação de Banco \& Capacidade (Aurora MySQL):} Diagnosticou saturação crítica de CPU e conexões em cluster Aurora MySQL durante picos assíncronos em filas; isolou a causa-raiz via AWS Performance Insights em escritas transacionais sem batching (>90\% de carga no writer) e pools de microsserviços excedendo limites da instância. Definiu tetos de conexão por serviço e recomendou a adoção de RDS Proxy para desacoplar o autoscaling dos limites de conexão do banco.
-    \item \textbf{Engenharia de Detecção \& Calibração de Alertas (New Relic / NerdGraph / Terraform):} Auditou centenas de condições de alerta via GraphQL (NerdGraph), identificando falhas de baseline em que a diluição por tráfego agregado atrasava detecções críticas em horas. Em backtesting no Metabase, a contagem por sessões distintas antecipou detecções em horas e reduziu aberturas em 62\%, codificando políticas compostas em NRQL via Terraform para reduzir falsos-positivos sem perda de cobertura.
-    \item \textbf{Resposta a Incidentes \& Otimização de Telemetria de Cache (AWS ElastiCache / Redis / New Relic):} Conduziu post-mortem técnico e mitigação para eventos de saturação de memória no Redis, resolvendo o backpressure nas filas expurgando payloads transitórios sem índice e ajustando a concorrência de workers. Projetou telemetria seletiva via CloudWatch Metric Streams para o New Relic (reduzindo volume em 95\%) para alertas automáticos de saturação em clusters de produção via Terraform.
-    \item \textbf{Confiabilidade de Pipelines \& Deadman Watchdog (Airflow / Docker / SSM):} Liderou remediação de falhas em pipeline de dados causadas por esgotamento de disco em pipeline de dados, restaurando acesso ao host via AWS SSM sob privilégio mínimo (IAM); implementou watchdog deadman em NRQL via Terraform, reduzindo o MTTD em >90\% em replay de incidente ao capturar travamentos silenciosos antes de reportes humanos; corrigiu monitores em IaC onde a média de partições mascarava saturação de volume.
-    \item \textbf{Confiabilidade de Agendadores \& Hardening de Hosts (Systemd / Linux):} Identificou causa-raiz de indisponibilidade não detectada em agendador provocada por health checks rasos no proxy mascarando falhas no daemon principal. Resolveu condições de corrida no boot de hosts via ordenação de unidades systemd (\texttt{After=}\penalty0\texttt{network-online.target}), padronizou políticas resilientes de reinicialização em serviços essenciais e configurou alertas de falha no Slack via \texttt{OnFailure} com credenciais via SSM.
-    \item \textbf{Alta Disponibilidade em Kubernetes \& GitOps (EKS / Karpenter / ArgoCD):} Eliminou ponto único de falha (SPOF) em nó na stack de observabilidade de IA após interrupção de nós Spot. Reestruturou manifestos GitOps no ArgoCD aplicando \texttt{topologySpreadConstraints} estrito (\texttt{DoNotSchedule}) para evitar co-alocação pelo Karpenter, viabilizando alta disponibilidade multinó em produção com acréscimo residual de capacidade spot.
+    \item \textbf{Engenharia de Detecção \& Calibração de Alertas (New Relic, Terraform):} Reduziu em 84\% aberturas em produção de CPU das réplicas Aurora (2,5 para 0,4/dia em 24 dias) via políticas Terraform/NRQL em dois níveis; auditou centenas de condições via NerdGraph criando alertas NRQL por sessões distintas (62\% menos aberturas em backtesting) e watchdog deadman em produção (>90\% de redução de MTTD em replay).
+    \item \textbf{Triagem de Banco \& Telemetria Seletiva de Cache (Aurora MySQL, Redis, CloudWatch):} Reduziu em \textasciitilde{}95\% a ingestão estimada no Redis via allowlists de CloudWatch Metric Streams em Terraform (em produção desde nov 2026, capturando alerta real de pressão de memória); conduziu \mbox{post-mortem} de OOM no Redis e diagnosticou Aurora via Performance Insights definindo limites de conexão e pooling com RDS Proxy.
+    \item \textbf{Recuperação de Host \& Confiabilidade Linux (EC2, SSM, systemd, Airflow):} Validou \mbox{auto-recuperação} de 13/13 contêineres em reboot em produção após restaurar exaustão de disco raiz via AWS SSM sob IAM de menor privilégio; diagnosticou queda silenciosa do scheduler (health check raso no proxy mascarando falha do daemon) e padronizou \texttt{systemd} (\mbox{\texttt{After=network-online.target}}, \texttt{nofail}) com alertas \texttt{OnFailure} no Slack em 10 serviços.
+    \item \textbf{EKS / GitOps HA \& Governança de Incidentes (Kubernetes, Karpenter, ArgoCD):} Eliminou \mbox{co-alocação} em nó único nas cargas de observabilidade em EKS Spot via ArgoCD GitOps (\mbox{\texttt{topologySpreadConstraints}} \mbox{\texttt{DoNotSchedule}}, HA com 2 réplicas e zero alertas de \texttt{No Replica} \mbox{pós-merge}); migrou cargas de LLM para task roles IAM do AWS Bedrock e padronizou fluxos de \mbox{post-mortem} sem culpa.
 \end{itemize}
 
 \newpage
+\textbf{Pedroso Automação} | ERP SaaS de Conformidade Fiscal B2B \hfill \mbox{Jun 2024 -- Ago 2026} \\
+\textit{Engenheiro de Suporte Técnico \mbox{L2/L3}} \hfill União da Vitória, PR
 
-\textbf{Pedroso Automação} | ERP SaaS de conformidade fiscal B2B \hfill Jun 2024 -- Ago 2026 \\
-\textit{Engenheiro de Suporte Técnico L2/L3} \hfill União da Vitória, PR
-
-Suporte L2/L3 direto para 500+ ambientes corporativos (1.500+ usuários finais) onde 30 minutos de indisponibilidade representam \textasciitilde{}R\$75k (\textasciitilde{}\$15k USD) em risco operacional, sustentando média de 80+ chamados semanais em rotações solo e resolução de incidentes P1/P2.
-\begin{itemize}[topsep=0.8pt]
-    \item \textbf{Investigação de Retenção de WAL \& Guardrails de Replicação:} Rastreou exaustão recorrente de disco na frota até slots órfãos no \texttt{pg\_replication\_slots} retendo WAL para assinante desativado em replicação lógica; construiu automação em PowerShell para expurgo (>2GB ou >30 min sem consumidor) e aplicou \texttt{max\_slot\_wal\_keep\_size} no PG13+, sem recorrência de exaustão de disco nos ambientes em que a rotina foi adotada.
-    \item \textbf{Padronização de Frota \& Orquestração pós-Crash (PostgreSQL):} Automatizou o provisionamento de instâncias PostgreSQL via scripts padronizados (2h para 7 min, \textasciitilde{}3 servidores/semana), aplicou hardening de autenticação no \texttt{pg\_hba.conf} (SCRAM-SHA-256 por padrão, MD5 restrito por IP para clientes legados) e reduziu o tempo de recuperação de host com 30 bancos de \textasciitilde{}3h para <5 min via inicialização paralela em ondas, limpeza de \texttt{postmaster.pid} órfão e validação prévia de WAL.
-    \item \textbf{Diagnóstico de Crescimento de Dados \& Otimização de Restore (PostgreSQL):} Auditou catálogos \texttt{pg\_class} e \texttt{pg\_toast} rastreando crescimento anômalo de \textasciitilde{}1GB/mês a caminhos serializados em tabelas de auditoria (estabelecendo rotina de expurgo); reduziu o restore de 17 para 7 min via restaurações paralelas em formato de diretório (\texttt{pg\_restore -j~4}).
-    \item \textbf{Engenharia de Pipeline ETL de 70M de Registros:} Projetou pipeline autônomo sobre dataset governamental de 15GB+ (70M+ registros) em PL/pgSQL e PowerShell com tabelas \texttt{unlogged} (minimizando overhead de I/O de escrita), reduzindo o tempo em 60\% (de \textasciitilde{}4h para \textasciitilde{}1h30) com paralelismo e ordenação em lote.
-    \item \textbf{Recuperação de Dados Críticos \& Engenharia Reversa (Firebird):} Protegeu inventário crítico de 10.000+ itens ativos ao fazer engenharia reversa de banco relacional legado sem documentação com apoio de IA, reprocessando 20 anos de logs de auditoria com zero data loss validado por conciliação contábil e fiscal, entregue no mesmo dia do primeiro acesso.
-    \item \textbf{Runbooks \& Triagem Assistida por LLM:} Elaborou 20+ runbooks ITIL e vídeos de treinamento que permitiram a técnicos N1 resolver escaladas diárias de forma autônoma; implementou triagem por LLM com injeção de schema do banco e regras fiscais, reduzindo o tempo de diagnóstico de 30+ para <5 min.
+Sustentação de ERP SaaS fiscal B2B de alto impacto (500+ ambientes, 1.500+ usuários finais, 80+ chamados semanais \mbox{L2/L3} em rotações solo) e resolução de incidentes \mbox{P1/P2}.
+\begin{itemize}[topsep=1.5pt]
+    \item \textbf{Retenção de WAL \& Guardrails de Replicação:} Rastreou exaustão recorrente de disco na frota até slots órfãos em \mbox{\texttt{pg\_replication\_slots}} retendo WAL de assinantes lógicos desativados; automatizou expurgo em PowerShell (>2GB ou >30 min sem consumidor) e aplicou \mbox{\texttt{max\_slot\_wal\_keep\_size}} no PG13+, eliminando recorrências nos ambientes adotados.
+    \item \textbf{Padronização de Frota \& Recuperação \mbox{pós-Crash} (PostgreSQL):} Automatizou provisionamento via scripts padronizados (2h para 7 min, \textasciitilde{}3 servidores/semana), aplicou hardening em \mbox{\texttt{pg\_hba.conf}} (\mbox{SCRAM-SHA-256} padrão, MD5 restrito por IP para legado) e reduziu recuperação de host com 30 bancos de \textasciitilde{}3h para <5 min via startup paralelo em ondas, limpeza de \mbox{\texttt{postmaster.pid}} órfão e validação prévia de WAL.
+    \item \textbf{Diagnóstico de Crescimento \& Otimização de Restore (PostgreSQL):} Auditou catálogos \texttt{pg\_class}/\texttt{pg\_toast} rastreando crescimento anômalo de \textasciitilde{}1GB/mês a caminhos serializados em tabelas de auditoria (automatizando expurgo) e reduziu restores de 17 para 7 min com \mbox{\texttt{pg\_restore -j~4}} em formato diretório e tuning por sessão.
+    \item \textbf{Engenharia de Pipeline ETL de 70M de Registros:} Projetou pipeline autônomo em PL/pgSQL e PowerShell sobre dataset governamental de 15GB+ (70M+ registros) com tabelas \texttt{unlogged}, paralelismo e ordenação em lote, reduzindo o processamento em 60\% (\textasciitilde{}4h para \textasciitilde{}1h30).
+    \item \textbf{Recuperação Crítica \& Engenharia Reversa (Firebird):} Protegeu inventário de 10.000+ itens ativos ao realizar engenharia reversa de banco legado sem documentação com apoio de IA, reprocessando 20 anos de logs com zero perda de dados validada por conciliação contábil e fiscal.
+    \item \textbf{Runbooks \& Triagem Assistida por LLM:} Elaborou 20+ runbooks ITIL para autonomia N1 e implementou triagem via LLM com injeção de schemas e regras fiscais, reduzindo o tempo de diagnóstico de 30+ para <5 min.
 \end{itemize}
 
-\vspace{1pt}
-\textbf{Girafa Comunicação Interativa} | Agência Digital \hfill Set 2022 -- Abr 2024 \\
+\vspace{3pt}
+\textbf{Girafa Comunicação Interativa} | Agência Digital \hfill \mbox{Set 2022 -- Abr 2024} \\
 \textit{AWS Support Engineer | Infraestrutura Cloud \& Aplicações Web} \hfill Remoto, Brasil
 
-Sustentação de infraestrutura AWS e suporte técnico para 70+ clientes corporativos em equipe multidisciplinar.
-\begin{itemize}[topsep=0.8pt]
-    \item \textbf{Operações Cloud AWS, DNS \& Governança de Releases:} Administrou nuvem e DNS corporativo em AWS (EC2, RDS MySQL 8, CloudFront, ACM) e Route 53 com registradores externos (Registro.br, Locaweb); executou 15+ migrações de zonas DNS com redução prévia de TTL e sem incidentes reportados de e-mail ou web, isolou falhas entre CDN, DNS e autenticação (SPF, DKIM, DMARC) e coordenou deploys em etapas via Git.
-    \item \textbf{Resposta a Incidente de Segurança \& Interlocução Internacional:} Investigou invasão auditando histórico de Git, CMS e logs de acesso para isolar vetor de ataque, contendo a ameaça em <24h a partir da detecção via revogação de sessões e rotação de credenciais em 10+ ambientes; atuou como interlocutor técnico em inglês com fornecedores nos EUA e Europa para escalonamentos e causa-raiz.
+Sustentação de infraestrutura AWS e suporte técnico para \textasciitilde{}60 domínios corporativos em equipe multidisciplinar.
+\begin{itemize}[topsep=1.5pt]
+    \item \textbf{Operações Cloud AWS, DNS \& Releases:} Administrou EC2, RDS MySQL 8, CloudFront, ACM e Route 53 com registradores externos (Registro.br, Locaweb); executou 15+ migrações de zonas DNS com redução prévia de TTL e zero indisponibilidade reportada de \mbox{web/e-mail}, isolou falhas entre CDN, DNS e autenticação (SPF, DKIM, DMARC) e coordenou deploys em etapas via Git.
+    \item \textbf{Resposta a Incidente de Segurança \& Interlocução Internacional:} Auditou commits Git, perfis de CMS e logs de acesso para isolar vetor de ataque, contendo o incidente em <24h da detecção via revogação de sessões e rotação de credenciais em 10+ ambientes; atuou como interlocutor técnico em inglês com fornecedores nos EUA e Europa.
 \end{itemize}
 
 % Projetos de Engenharia em Produção
 \section{Projetos de Engenharia em Produção}
 
-\textbf{Monitoramento do Rio Iguaçu} | Plataforma Hidrológica \& Simulação de Cheias \hfill Jun 2026 -- Atual \\
-\textit{Autor e responsável pela operação (em produção desde Set 2026)} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
-\begin{itemize}[topsep=0.8pt]
-    \item \textbf{Ingestão de Telemetria Multifonte \& Confiabilidade de Dados:} Pipeline autônomo (timer systemd a cada 15 min) integrando 5 estações telemétricas da bacia e a série histórica da ANA (desde 1930), Copel e ONS, acumulando >3,28 milhões de registros imutáveis; implementou validação estrita de schema e verificações de frescor que isolam quebras de upstream sem corromper a série temporal histórica.
-    \item \textbf{Confiabilidade Operacional sob Pico de Tráfego:} Atendeu 2,7M+ requisições no subdomínio do Jornal O Comércio desde o deploy (set/2026) e absorveu pico de 43k req/hora durante cheia (cota de alerta de 5,5 m, >20x o tráfego basal) sem indisponibilidade registrada. O pico coube em VPS de 4 GB de RAM (2 vCPUs) graças a camadas GeoJSON pré-computadas servidas pelo Nginx (ETag/Cache-Control) e singleflight no backend Python contra sobrecarga de DEM; a operação conta com 120+ releases imutáveis, rollback por symlink, testes E2E com Playwright e isolamento systemd (\texttt{ProtectSystem=strict}).
+\textbf{Monitoramento do Rio Iguaçu} | Plataforma Hidrológica \& Simulação de Cheias \hfill \mbox{Jun 2026 -- Atual} \\
+\textit{Autor e operador (em produção desde Set 2026)} \hfill \href{https://rioiguacu.jornalocomercio.com}{rioiguacu.jornalocomercio.com}
+\begin{itemize}[topsep=1.5pt]
+    \item \textbf{Telemetria Multifonte \& Integridade de Dados:} Pipeline autônomo (\texttt{systemd} timer a cada 15 min) integrando 5 estações telemétricas da bacia e séries da ANA (desde 1930), Copel e ONS (>3,28M de registros imutáveis), com validação estrita de schema e frescor que isola quebras de upstream sem corromper o histórico.
+    \item \textbf{Confiabilidade sob Pico \& Entrega Hardened:} Atendeu 2,7M+ requisições e absorveu pico de 43k req/h durante cheia (>20x basal) sem indisponibilidade registrada em VPS de 4 GB RAM / 2 vCPUs usando GeoJSON \mbox{pré-computado} no Nginx (\mbox{ETag/Cache-Control}) e \texttt{singleflight} no backend Python; sustentado por 120+ releases imutáveis, rollback por symlink, testes E2E (Playwright) e isolamento \texttt{systemd} (\mbox{\texttt{ProtectSystem=strict}}).
 \end{itemize}
 
 % Formação e Prêmios
 \section{Formação \& Prêmios}
-\textbf{FGV | Ciência de Dados \& Economia (2020--2022, 4 semestres concluídos)} \hfill Rio de Janeiro, Brasil \\
-Bolsista integral (OBMEP). Foco em probabilidade, estatística e programação.
-
-\vspace{0.8pt}
-\textbf{IFPR | Análise e Desenvolvimento de Sistemas (2023--2024, 3 semestres concluídos)} \hfill União da Vitória, Brasil \\
-Foco em algoritmos, modelagem de banco de dados e redes de computadores.
-
-\vspace{0.8pt}
-\textbf{Medalha de Prata | Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP, 2016)} \hfill Nacional \\
-Premiado no top 0,01\% nacional entre 18M+ participantes; Medalha de Bronze (2014) e 2x Menções Honrosas.
+\textbf{FGV} --- Ciência de Dados \& Economia \textit{(4 semestres, bolsa integral por mérito nacional, \mbox{2020--2022})} \hfill Rio de Janeiro, Brasil \\
+\textbf{IFPR} --- Análise e Desenvolvimento de Sistemas \textit{(3 semestres concluídos, \mbox{2023--2024})} \hfill União da Vitória, Brasil \\
+\textbf{Prêmios:} Medalha de Prata na OBMEP \textit{(2016, top 0,01\% entre 18M+ participantes no país)}
 
 \end{document}

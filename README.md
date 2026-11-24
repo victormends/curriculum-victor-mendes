@@ -44,13 +44,5 @@ pdflatex template_ptbr.tex   # PT-BR currículo
 
 The tracked PDFs are the public résumé artifacts. CI compiles them automatically on every push to `main`.
 
-## Public Release Checklist
-
-- `template.tex` compiles without LaTeX errors.
-- The tracked PDF matches the current source.
-- Contact links and GitHub/LinkedIn URLs work.
-- Claims and metrics are intentionally résumé-level summaries, not client-identifying case studies.
-- No private client names, internal hostnames, credentials, or non-public incident details are included.
-
 ---
-*The PDFs in this repository are always in sync with the LaTeX source — compiled automatically by CI.*
+*The PDFs in this repository are always in sync with the LaTeX source, compiled automatically by CI.*
